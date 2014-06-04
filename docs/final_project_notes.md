@@ -1,5 +1,6 @@
 # Final Project: TechKudo
----
+
+----
 Live Demo: <http://TechKudo.com>  
 Code: <http://GitHub.com/Brian-Boyd/TechKudo>
 
@@ -42,7 +43,7 @@ User a map API like Google Maps or MapBox
 * People who like COMPANY also like...
 
 
-### Tables
+### Table Columns & Fields
 
  Company    | User     | Kudos   | Image    | Rating         | UserRelation | CompanyUserJoinTable
 ------------|----------|---------|----------|----------------|--------------|---------------------
@@ -59,3 +60,25 @@ User a map API like Google Maps or MapBox
 * UserRelation  [EMPLOYEE, FORMER_EMPLOYEE, OTHER]
 
 ### Build/Time Estimate
+
+Description       | Type    | Hours
+------------------|---------|------:
+Home Page         | Design  | 8
+Sign Up Form      | Design  | 2
+Login Form        | Design  | 2
+User Profile Page | Design  | 5
+Company Page      | Design  | 5
+Fuzzy Search      | Feature | 10
+Google Map API    | Feature | 12
+Table Filter      | Feature | 10
+Share             | Feature | 6
+Rating            | Feature | 10
+Kudos (comments)  | Feature | 8
+Favorites         | Feature | 8
+Login (Devise)    | Feature | 4
+Signin (LinkedIn) | Feature | 8
+Signin (Twitter)  | Feature | 8
+Signin (Facebook) | Feature | 8
+Seed Database     | Feature | 6
+Pagination        | Feature | 6
+Total Hours       |         | 126

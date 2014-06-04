@@ -8,8 +8,9 @@ Code: <http://GitHub.com/Brian-Boyd/TechKudo>
 TechKudo is a directory of technology companies, where they are located, where to find job openings and kudos from people that know the company. A job seekers starting point.
 
 #### TechKudo [tek koo doh]
-* an admiring personal remark from a person given to a technology company 
+* an admiring personal remark from a person given to a technology compan
 
+ 
 ### How it Works:
 
 #### To find great companies:
@@ -44,7 +45,7 @@ User a map API like Google Maps or MapBox
 ### Tables
 
  Company    | User     | Kudos   | Image    | Rating         | UserRelation | CompanyUserJoinTable
-------------|----------|---------|----------|----------------|------------------------------------
+------------|----------|---------|----------|----------------|--------------|---------------------
  name       | name     | kudo    | name     | overall        | name         | company_id 
  address    | email    | user_id | kudo_id  | comp_benefits  |              | user_id
  city       | password |         |          | perks          |              |

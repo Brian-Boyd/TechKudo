@@ -1,6 +1,5 @@
 # Final Project: TechKudo
 
-----
 Live Demo: <http://TechKudo.com>  
 Code: <http://GitHub.com/Brian-Boyd/TechKudo>
 
@@ -47,13 +46,13 @@ User a map API like Google Maps or MapBox
 
  Company    | User     | Kudos   | Image    | Rating         | UserRelation | CompanyUserJoinTable
 ------------|----------|---------|----------|----------------|--------------|---------------------
- name       | name     | kudo    | name     | overall        | name         | company_id 
- address    | email    | user_id | kudo_id  | comp_benefits  |              | user_id
- city       | password |         |          | perks          |              |
- state      | location |         |          | culture_values |              |
+ name       | name     | kudo    | name     | comp_benefits  | name         | company_id 
+ address    | email    | user_id | kudo_id  | perks          |              | user_id
+ city       | password |         |          | culture_values |              |
+ state      | location |         |          |                |              |
  zip_code   | url      |         |          |                |              |
  phone      | bio      |         |          |                |              |
- min_url    |          |         |          |                |              |
+ main_url   |          |         |          |                |              |
  career_url |          |         |          |                |              |
 
 ### Table Notes:
@@ -81,4 +80,5 @@ Signin (Twitter)  | Feature | 8
 Signin (Facebook) | Feature | 8
 Seed Database     | Feature | 6
 Pagination        | Feature | 6
-Total Hours       |         | 126
+Testing           | Core    | 20
+Total Hours       |         | 146

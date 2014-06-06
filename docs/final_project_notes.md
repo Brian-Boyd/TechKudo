@@ -44,7 +44,7 @@ User a map API like Google Maps or MapBox
 
 ### Table Columns & Fields
 
- Company    | User     | Kudo    | Image    | Rating         | UserRelation
+ Company    | User     | Kudo    | Image    | Rating         | Relationship
 ------------|----------|---------|----------|----------------|-------------
  name       | name     | comment | name     | comp_benefits  | name        
  address    | email    | user_id | kudo_id  | perks          |             
@@ -57,10 +57,10 @@ User a map API like Google Maps or MapBox
 
 ### Join Tables
 
- CompanyUserJT | CompanyKudoJT | KudoUserJT | ImageUserJT | UserRelationUserJT
----------------|---------------|------------|-------------|-------------------
- company_id    | company_id    | kudo_id    | image_id    | user_relation_id
- user_id       | kudo_id       | user_id    | user_id     | user_id
+ CompanyUserJT | CompanyKudoJT | KudoUserJT | ImageUserJT | RelationshipUserJT | RatingUserJT
+---------------|---------------|------------|-------------|----------------------------------
+ company_id    | company_id    | kudo_id    | image_id    | relationship_id    | rating_id
+ user_id       | kudo_id       | user_id    | user_id     | user_id            | user_id
 
 ### Table Notes:
 * UserRelation  [EMPLOYEE, FORMER_EMPLOYEE, OTHER]

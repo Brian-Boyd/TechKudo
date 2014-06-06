@@ -58,7 +58,7 @@ User a map API like Google Maps or MapBox
 ### Join Tables
 
  CompanyUserJT | CompanyKudoJT | KudoUserJT | ImageUserJT | RelationshipUserJT | RatingUserJT
----------------|---------------|------------|-------------|----------------------------------
+---------------|---------------|------------|-------------|--------------------|-------------
  company_id    | company_id    | kudo_id    | image_id    | relationship_id    | rating_id
  user_id       | kudo_id       | user_id    | user_id     | user_id            | user_id
 

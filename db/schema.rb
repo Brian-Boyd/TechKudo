@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140605145910) do
+ActiveRecord::Schema.define(version: 20140606150204) do
 
   create_table "companies", force: true do |t|
     t.string   "name"
@@ -26,11 +26,84 @@ ActiveRecord::Schema.define(version: 20140605145910) do
     t.datetime "updated_at"
   end
 
+  create_table "company_kudo_join_tables", force: true do |t|
+    t.integer  "company_id"
+    t.integer  "kudo_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "company_user_join_tables", force: true do |t|
+    t.integer  "company_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "image_user_join_tables", force: true do |t|
+    t.integer  "image_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "images", force: true do |t|
+    t.string   "name"
+    t.integer  "kudo_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "kudo_user_join_tables", force: true do |t|
+    t.integer  "kudo_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "kudos", force: true do |t|
+    t.string   "comment"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rating_user_join_tables", force: true do |t|
+    t.integer  "rating_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ratings", force: true do |t|
+    t.integer  "comp_benefits"
+    t.integer  "perks"
+    t.integer  "culture_values"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "relationship_user_join_tables", force: true do |t|
+    t.integer  "relationship_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "relationships", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "name",                   default: "",     null: false
     t.string   "role",                   default: "user", null: false
     t.string   "email",                  default: "",     null: false
     t.string   "encrypted_password",     default: "",     null: false
+    t.string   "location"
+    t.string   "url"
+    t.string   "bio"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -42,9 +115,9 @@ ActiveRecord::Schema.define(version: 20140605145910) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "provider"
+    t.string   "uid"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
-    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -44,16 +44,23 @@ User a map API like Google Maps or MapBox
 
 ### Table Columns & Fields
 
- Company    | User     | Kudos   | Image    | Rating         | UserRelation | CompanyUserJoinTable
-------------|----------|---------|----------|----------------|--------------|---------------------
- name       | name     | kudo    | name     | comp_benefits  | name         | company_id 
- address    | email    | user_id | kudo_id  | perks          |              | user_id
- city       | password |         |          | culture_values |              |
- state      | location |         |          |                |              |
- zip_code   | url      |         |          |                |              |
- phone      | bio      |         |          |                |              |
- main_url   |          |         |          |                |              |
- career_url |          |         |          |                |              |
+ Company    | User     | Kudo    | Image    | Rating         | UserRelation
+------------|----------|---------|----------|----------------|-------------
+ name       | name     | comment | name     | comp_benefits  | name        
+ address    | email    | user_id | kudo_id  | perks          |             
+ city       | password |         |          | culture_values |             
+ state      | location |         |          |                |             
+ zip_code   | url      |         |          |                |             
+ phone      | bio      |         |          |                |             
+ main_url   |          |         |          |                |             
+ career_url |          |         |          |                |             
+
+### Join Tables
+
+ CompanyUserJT | CompanyKudoJT | KudoUserJT | ImageUserJT | UserRelationUserJT
+---------------|---------------|------------|-------------|-------------------
+ company_id    | company_id    | kudo_id    | image_id    | user_relation_id
+ user_id       | kudo_id       | user_id    | user_id     | user_id
 
 ### Table Notes:
 * UserRelation  [EMPLOYEE, FORMER_EMPLOYEE, OTHER]

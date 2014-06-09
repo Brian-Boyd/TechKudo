@@ -4,7 +4,39 @@ class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.json
   def index
+    if params[:search].present?
+      @companies = Company.near(params[:search], 3, order: :distance)
+    else
+      @companies = Company.all
+    end
     @companies = Company.all
+    @geojson = Array.new
+
+    @companies.each do |company|
+      @geojson << {
+        type: 'Feature',
+        geometry: {
+          type: 'Point',
+          coordinates: [company.longitude, company.latitude]
+        },
+        properties: {
+          company_name: company.name,
+          address: company.address,
+          city: company.city,
+          state: company.state,
+          zip_code: company.zip_code,
+          phone: company.phone,
+          main_url: company.main_url,
+          :'marker-color' => '#00607d',
+          :'marker-symbol' => 'embassy',
+          :'marker-size' => 'large'
+        }
+      }
+    end
+    respond_to do |format|
+      format.html
+      format.json { render json: @geojson }  # respond with the created JSON object
+    end
   end
 
   # GET /companies/1

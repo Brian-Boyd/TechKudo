@@ -2,11 +2,18 @@ source 'https://rubygems.org'
 
 gem 'mysql2'
 gem 'quiet_assets'
-gem 'bootstrap-sass', '~> 2.3.1.0'
+gem 'bootstrap-sass', '~> 3.1.1'
 gem 'bootstrap_form'
 gem 'devise'
 gem "omniauth"
 gem 'omniauth-facebook'
+gem 'geocoder'
+# gem 'mapbox-rails'
+
+# group :development do
+#   gem 'better_errors'
+#   gem 'binding_of_caller'
+# end
 
 gem 'rails', '4.1.0'
 gem 'sass-rails', '~> 4.0.3'

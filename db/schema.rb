@@ -22,6 +22,9 @@ ActiveRecord::Schema.define(version: 20140606150204) do
     t.string   "phone"
     t.string   "main_url"
     t.string   "career_url"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.integer  "distance"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

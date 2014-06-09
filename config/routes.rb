@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'welcome/employer'
 
   resources :companies
+  resources :kudos, except: [:index]
 
   root 'welcome#index'
 

@@ -9,6 +9,9 @@ class CreateCompanies < ActiveRecord::Migration
       t.string :phone
       t.string :main_url
       t.string :career_url
+      t.float :latitude, precision: 10
+      t.float :longitude, precision: 10
+      t.integer :distance
 
       t.timestamps
     end

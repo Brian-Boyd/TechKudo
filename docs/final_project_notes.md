@@ -54,6 +54,8 @@ User a map API like Google Maps or MapBox
  phone      | bio      |         |          |                |             
  main_url   |          |         |          |                |             
  career_url |          |         |          |                |             
+ latitude   |          |         |          |                |             
+ longitude  |          |         |          |                |             
 
 ### Join Tables
 

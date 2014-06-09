@@ -20,7 +20,7 @@ class CompaniesController < ApplicationController
           coordinates: [company.longitude, company.latitude]
         },
         properties: {
-          company_name: company.name,
+          name: company.name,
           address: company.address,
           city: company.city,
           state: company.state,

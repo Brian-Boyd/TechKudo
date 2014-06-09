@@ -1,6 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@company.latitude}%2C#{@company.longitude}" %>
+
+<div id='map2' style='width: 800px; height: 400px;'></div>
+
+<%= javascript_tag do %>
+var map2 = L.mapbox.map('map2', 'cubicalweb.iejodo9f')
+    .setView(['<%= @company.latitude %>', '<%= @company.longitude %>'], 15);
+
+L.mapbox.featureLayer({
+    type: 'Feature',
+    geometry: {
+        type: 'Point',
+        coordinates: [
+          '<%= @company.longitude %>',
+          '<%= @company.latitude %>' 
+        ]
+    },
+    properties: {
+        title: '<%= @company.name %>',
+        description: '<%= @company.address %>',
+        'marker-size': 'large',
+        'marker-color': '#BE9A6B',
+        'marker-symbol': 'star'
+    }
+}).addTo(map2);
+
+<% end %>
+
 
 <p>
   <strong>Name:</strong>

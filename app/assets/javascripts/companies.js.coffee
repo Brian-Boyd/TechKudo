@@ -3,48 +3,85 @@
 
 load_on_page = ->
   if $("#map").length > 0
-    map = L.mapbox.map('map', 'cubicalweb.iejodo9f').setView([32.773, -79.934], 14)
+    setActive = (el) ->
+      siblings = listings.getElementsByTagName("div")
+      i = 0
 
-    # get JSON object
-    # on success, parse it and 
-    # hand it over to MapBox for mapping 
+      while i < siblings.length
+        siblings[i].className = siblings[i].className.replace(/active/, "").replace(/\s\s*$/, "")
+        i++
+      el.className += " active"
+      return
+  
+    map = L.mapbox.map("map", "cubicalweb.iejodo9f").setView([
+      32.826101
+      -79.951235
+    ], 12)
+    listings = document.getElementById("listings")
+    locations = L.mapbox.featureLayer().addTo(map)
+    locations.loadURL "companies.json"
+    locations.on "ready", ->
+      locations.eachLayer (locale) ->
+        
+        # Shorten locale.feature.properties to just `prop` so we're not
+        # writing this long form over and over again.
+        prop = locale.feature.properties
+        
+        # Each marker on the map.
+        popup = "<h3>" + "<a href='http://localhost:3000/companies/" + prop.id + "'>" + prop.name + "</a>" + "</h3><div>" + prop.address
+        listing = listings.appendChild(document.createElement("div"))
+        listing.className = "item"
+        link = listing.appendChild(document.createElement("a"))
+        link.href = "#"
+        link.className = "title"
+        link.innerHTML = prop.name
+        if prop.address
+          link.innerHTML += "<br /><small class=\"quiet\">" + prop.address + "<br />" + prop.city + ", " + prop.state + "<br />" + prop.phone + "<br />" + prop.main_url + "</small>"
+          popup += "<br /><small class=\"quiet\">" + prop.city + ", " + prop.state + "</small>"
+        link.onclick = ->
+          setActive listing
+          
+          # When a menu item is clicked, animate the map to center
+          # its associated locale and open its popup.
+          map.setView locale.getLatLng(), 14
+          locale.openPopup()
+          false
 
-    $.ajax
-      dataType: 'text'
-      url: '/companies.json'
-      success: (data) ->
-        geojson = $.parseJSON(data)
-        console.log geojson
-        map.featureLayer.setGeoJSON(geojson)
+        
+        # Marker interaction
+        locale.on "click", (e) ->
+          
+          # 1. center the map on the selected marker.
+          map.panTo locale.getLatLng()
+          
+          # 2. Set active the markers associated listing.
+          setActive listing
+          return
 
-    # add custom popups to each marker
-    map.featureLayer.on 'layeradd', (e) ->
+        popup += "</div>"
+        locale.bindPopup popup
+        return
+
+      return
+
+    locations.on "layeradd", (e) ->
       marker = e.layer
-      properties = marker.feature.properties
-
-      # create custom popup
-      popupContent =  '<div class="popup">' +
-                        '<h3>' + properties.name + '</h3>' +
-                        '<p>' + properties.address + '<br />' +
-                        properties.city + ', ' + properties.state + ' ' + 
-                        properties.zip_code + '</p>' +
-                      '</div>'
-
-      # http://leafletjs.com/reference.html#popup
-      marker.bindPopup popupContent,
-        closeButton: false
-        minWidth: 320
-
-  # handles a sidebar happy hour click
-  $('article li').click (e) ->
-    current = $(this)
-    currentlyClickedName = current.find('h2').text()
-
-    # opens/closes popup for currently clicked happy hour
-    map.featureLayer.eachLayer (marker) ->
-      if marker.feature.properties.name is currentlyClickedName
-        id = layer._leaflet_id
-        map._layers[id].openPopup()
+      marker.setIcon L.icon(
+        iconUrl: "http://cubicalweb.com/test/marker-flag.png"
+        iconSize: [
+          48
+          48
+        ]
+        iconAnchor: [
+          24
+          24
+        ]
+        popupAnchor: [
+          0
+          -34
+        ]
+      )
+      return
 
 $(document).ready(load_on_page)
 $(document).on('page:load', load_on_page)

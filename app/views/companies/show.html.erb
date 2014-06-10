@@ -1,12 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 
-<div id='map2' style='width: 800px; height: 400px;'></div>
+<div id='map2' style='width: 500px; height: 400px;'></div>
 
 <%= javascript_tag do %>
 var map2 = L.mapbox.map('map2', 'cubicalweb.iejodo9f')
     .setView(['<%= @company.latitude %>', '<%= @company.longitude %>'], 15);
-
 L.mapbox.featureLayer({
     type: 'Feature',
     geometry: {
@@ -17,8 +16,9 @@ L.mapbox.featureLayer({
         ]
     },
     properties: {
-        title: '<%= @company.name %>',
+        title: '<a href="<%= @company.main_url %>" target="_blank"><%= @company.name %></a>',
         description: '<%= @company.address %>',
+        title2: '<%= @company.name %>',
         'marker-size': 'large',
         'marker-color': '#BE9A6B',
         'marker-symbol': 'star'
@@ -27,7 +27,7 @@ L.mapbox.featureLayer({
 
 <% end %>
 
-
+<h2>I want the edit form on the same page and refresh with AJAX</h2>
 <p>
   <strong>Name:</strong>
   <%= @company.name %>
@@ -60,12 +60,12 @@ L.mapbox.featureLayer({
 
 <p>
   <strong>Main url:</strong>
-  <%= link_to @company.main_url, @company.main_url %>
+  <%= link_to @company.main_url, @company.main_url, target: "_blank" %>
 </p>
 
 <p>
   <strong>Career url:</strong>
-  <%= link_to @company.career_url, @company.career_url %>
+  <%= link_to @company.career_url, @company.career_url, target: "_blank" %>
 </p>
 
 <p>

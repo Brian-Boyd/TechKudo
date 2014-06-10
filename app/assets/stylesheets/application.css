@@ -18,3 +18,10 @@
  */
 
 
+body {
+  margin-top: 50px;
+}
+
+.navbar-right {
+  padding-right: 20px;
+}

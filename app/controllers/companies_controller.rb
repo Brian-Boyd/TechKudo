@@ -1,4 +1,5 @@
 class CompaniesController < ApplicationController
+  layout "companies_map", only: :index
   before_action :set_company, only: [:show, :edit, :update, :destroy]
 
   # GET /companies
@@ -20,6 +21,7 @@ class CompaniesController < ApplicationController
           coordinates: [company.longitude, company.latitude]
         },
         properties: {
+          id: company.id,
           name: company.name,
           address: company.address,
           city: company.city,
@@ -27,7 +29,7 @@ class CompaniesController < ApplicationController
           zip_code: company.zip_code,
           phone: company.phone,
           main_url: company.main_url,
-          :'marker-color' => '#00607d',
+          :'marker-color' => '#FF8B00',
           :'marker-symbol' => 'embassy',
           :'marker-size' => 'large'
         }

@@ -968,3 +968,16 @@ Company.create!(
   latitude:   "32.902864",
   longitude:  "-79.8069809"
   )
+
+Company.create!(
+  name:       "CNTC",
+  address:    "9433 Hwy 78, Unit C",
+  city:       "Ladson",
+  state:      "SC",
+  zip_code:   "29456",
+  phone:      "843-376-2898",
+  main_url:   "http://www.cneworks.com/",
+  career_url: "",
+  latitude:   "32.982264",
+  longitude:  "-80.0905809"
+  )

@@ -1,44 +1,9 @@
-<h1>Technology Companies</h1>
+<div class='sidebar'>
+  <div class='heading'>
+    <h1>Technology Companies</h1>
+    <P><%= link_to "Add Company", new_company_path %></p>
+  </div>
+  <div id='listings' class='listings'></div>
+</div>
 
-<%= link_to 'New Company', new_company_path %>
-<br>
-
-<div id='map' class='map' style='width: 800px; height: 400px;'></div>
-
-<%= form_tag companies_path, method: :get do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search Near", name: nil %>
-  </p>
-<% end %>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Location</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @companies.each do |company| %>
-      <tr>
-        <td><%= link_to company.name, company, class: 'btn btn-link' %></td>
-        <td><%= "#{company.city}, #{company.state}" %></td>
-        <% if company.main_url.blank? %>
-          <td></td>
-        <% elsif %>
-          <td><%= link_to 'Website Link', company.main_url, class: 'btn btn-xs btn-success' %></td>
-        <% end %>
-        <% if company.career_url.blank? %>
-          <td></td>
-        <% elsif %>
-          <td><%= link_to 'Career Link', company.career_url, class: 'btn btn-xs btn-info' %></td>
-        <% end %>
-        <td><%= link_to 'Edit', edit_company_path(company), class: 'btn btn-xs btn-warning' %></td>
-        <td><%= link_to 'Destroy', company, method: :delete, class: 'btn btn-xs btn-danger', data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div id='map' class='map pad2'>Map</div>

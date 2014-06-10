@@ -8,7 +8,7 @@ gem 'devise'
 gem "omniauth"
 gem 'omniauth-facebook'
 gem 'geocoder'
-# gem 'mapbox-rails'
+gem 'carrierwave'
 
 # group :development do
 #   gem 'better_errors'

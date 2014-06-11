@@ -19,9 +19,99 @@
 
 
 body {
-  margin-top: 50px;
+  margin-top: 60px;
 }
 
 .navbar-right {
   padding-right: 20px;
+}
+
+.closeby-company {
+  background-color: #E6E9EF;
+  border-color: #24395D #CCCCCC;
+  border-left: 1px solid #CCCCCC;
+  border-radius: 5px;
+  border-right: 1px solid #CCCCCC;
+  border-style: solid;
+  border-width: 4px 1px;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  transition: all 0.4s ease 0s;
+}
+
+.closeby-company, .company-detail h2, h3 {
+  margin-top: 0;
+}
+
+.company-detail-wrapper h2, h3 {
+  margin-top: 0;
+}
+
+.company-container {
+  background-color: #E6E9EF;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  padding: 10px;
+  overflow: hidden;
+  border: 1px dashed red;
+}
+
+.company-icon-wrapper {
+  float: left;
+  line-height: 0;
+  margin-right: 20px;
+  border: 1px dashed red;
+}
+
+.company-detail-wrapper {
+  float: left;
+  border: 1px dashed red;
+}
+
+.kudo-container {
+  background-color: #E6E9EF;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 20px;
+  overflow: hidden;
+  border: 1px dashed red;
+}
+
+.kudo-icon-wrapper {
+  float: left;
+  line-height: 0;
+  margin-right: 20px;
+  border: 1px dashed red;
+}
+
+.kudo-detail-wrapper {
+  float: left;
+  border: 1px dashed red;
+}
+
+li.kudo {
+  list-style: none;
+  overflow: hidden;
+  border-bottom: 1px solid #F5F3F1;
+}
+
+ul.kudo-list {
+  padding-left: 0;
+}
+
+/*li.kudo .kudo-icon-wrapper .kudo-detail-wrapper {
+    display: inline-block;
+    vertical-align: top;
+}*/
+
+.kudo-icon-wrapper {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.kudo-detail-wrapper {
+  display: inline-block;
+  vertical-align: top;
 }

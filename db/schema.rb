@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140606150204) do
+ActiveRecord::Schema.define(version: 20140610145242) do
 
   create_table "companies", force: true do |t|
     t.string   "name"
@@ -57,16 +57,16 @@ ActiveRecord::Schema.define(version: 20140606150204) do
     t.datetime "updated_at"
   end
 
-  create_table "kudo_user_join_tables", force: true do |t|
+  create_table "kudo_join_tables", force: true do |t|
     t.integer  "kudo_id"
     t.integer  "user_id"
+    t.integer  "company_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "kudos", force: true do |t|
     t.string   "comment"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -121,6 +121,7 @@ ActiveRecord::Schema.define(version: 20140606150204) do
     t.string   "uid"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
+    t.string   "image"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

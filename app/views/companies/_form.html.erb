@@ -13,7 +13,11 @@
     <% end %>
 
     <fieldset>
-      <legend>Can an IF statement go here? Either ADD or EDIT</legend>
+      <%- if params[:action] == 'new' %>
+        <legend>Add New Company</legend>
+      <%- elsif params[:action] == 'edit' %>
+        <legend>Edit <%= link_to @company.name, @company %></legend>
+      <%- end %>
       <div class="form-group">
         <%= f.label :name, class: 'col-lg-2 control-label' %><br>
         <div class="col-lg-10">

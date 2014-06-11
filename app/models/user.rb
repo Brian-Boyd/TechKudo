@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :kudos, through: :company_kudo_join_table
   has_many :rating_user_join_table
   has_many :ratings, through: :rating_user_join_table
+  # has_many :images, as: :imageable
 
   def self.from_facebook_omniauth(auth)
     puts auth.inspect

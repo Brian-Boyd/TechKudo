@@ -24,11 +24,11 @@ class KudosController < ApplicationController
   # POST /kudos
   # POST /kudos.json
   def create
-    @kudo = Kudo.new(kudo_params)
-
+    @company = Company.find(params[:company][:company_id])
+    @kudo = @company.kudos.new kudo_params.merge({user_id: current_user.id})
     respond_to do |format|
       if @kudo.save
-        format.html { redirect_to @kudo, notice: 'Kudo was successfully created.' }
+        format.html { redirect_to @company, notice: 'Kudo was successfully created.' }
         format.json { render :show, status: :created, location: @kudo }
       else
         format.html { render :new }
@@ -69,6 +69,6 @@ class KudosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def kudo_params
-      params.require(:kudo).permit(:comment)
+      params.require(:kudo).permit(:comment, :company_id, :user_id)
     end
 end

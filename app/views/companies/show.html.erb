@@ -42,41 +42,18 @@
 
   <div class="kudo-container">
     <ul class="kudo-list">
-      <li class="kudo">
-        <div class="kudo-icon-wrapper">
-          <img src="http://placehold.it/50x50">
-        </div>
-        <div class="kudo-detail-wrapper">
-          <p>The Lee brothers took Andrew to a restaurant known for serving a traditional southern comfort food --boiled green peanuts. As seen on Bizarre Foods America.<br>
-          Travel Channel · March 2, 2012</p>
-          <p>The Lee brothers took Andrew to a restaurant known for serving a traditional southern comfort food --boiled green peanuts. As seen on Bizarre Foods America.<br>
-          Travel Channel · March 2, 2012</p>
-        </div>
-      </li>
 
+      <% @company.kudos.each do |kudo| %>
       <li class="kudo">
         <div class="kudo-icon-wrapper">
           <img src="http://placehold.it/50x50">
         </div>
         <div class="kudo-detail-wrapper">
-          <p>The Big Nasty Biscuit and Gravy is awesome. Try the fried green tomatoes. The sweet tea is one of the best I've had. This place has been featured on all the big Food and Travel shows.<br>
-          Stephen Bellingham · August 18, 2010</p>
-          <p>The Lee brothers took Andrew to a restaurant known for serving a traditional southern comfort food --boiled green peanuts. As seen on Bizarre Foods America.<br>
-          Travel Channel · March 2, 2012</p>
+          <p><%= kudo.comment %></p>
         </div>
       </li>
-      
-      <li class="kudo">
-        <div class="kudo-icon-wrapper">
-          <img src="http://placehold.it/50x50">
-        </div>
-        <div class="kudo-detail-wrapper">
-          <p>One of my favorite places in Charleston! Get the big nasty biscuit followed by chocolate pudding! Both featured on Food Network and you can definitely see why!<br>
-          Johnny B · October 8, 2012</p>
-          <p>The Lee brothers took Andrew to a restaurant known for serving a traditional southern comfort food --boiled green peanuts. As seen on Bizarre Foods America.<br>
-          Travel Channel · March 2, 2012</p>
-        </div>
-      </li>
+      <% end %>
+
     </ul>
   </div>
 </div>

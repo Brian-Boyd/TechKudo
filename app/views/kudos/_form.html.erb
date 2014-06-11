@@ -13,8 +13,14 @@
 
   <div class="field">
     <%= f.label :comment %><br>
-    <%= f.text_field :comment %>
+    <%= f.text_area :comment, rows: "4", cols: "40", placeholder: "Leave a Kudo for this company." %>
   </div>
+
+  <div class="field">
+    <%= f.label :company %><br>
+    <%= collection_select(:company, :company_id, Company.all, :id, :name) %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

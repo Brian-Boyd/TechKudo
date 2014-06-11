@@ -57,8 +57,7 @@ ActiveRecord::Schema.define(version: 20140610145242) do
     t.datetime "updated_at"
   end
 
-  create_table "kudo_join_tables", force: true do |t|
-    t.integer  "kudo_id"
+  create_table "kudo_user_join_tables", force: true do |t|
     t.integer  "user_id"
     t.integer  "company_id"
     t.datetime "created_at"
@@ -67,6 +66,8 @@ ActiveRecord::Schema.define(version: 20140610145242) do
 
   create_table "kudos", force: true do |t|
     t.string   "comment"
+    t.integer  "company_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

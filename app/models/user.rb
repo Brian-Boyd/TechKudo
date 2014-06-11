@@ -4,8 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :kudo_user_join_table
-  has_many :kudos, through: :company_kudo_join_table
+  # has_many :kudos
+  # has_many :kudo_user_join_table
+  # has_many :kudos, through: :company_kudo_join_table
   has_many :rating_user_join_table
   has_many :ratings, through: :rating_user_join_table
   # has_many :images, as: :imageable

@@ -9,6 +9,7 @@ gem "omniauth"
 gem 'omniauth-facebook'
 gem 'geocoder'
 gem 'carrierwave'
+gem 'jquery-ui-rails'
 
 # group :development do
 #   gem 'better_errors'

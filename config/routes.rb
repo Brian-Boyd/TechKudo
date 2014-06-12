@@ -11,7 +11,11 @@ Rails.application.routes.draw do
   get 'welcome/about'
   get 'welcome/employer'
 
-  resources :companies
+  resources :companies do
+    collection do
+      get 'autocomplete'
+    end
+  end
   resources :kudos, except: [:index]
 
   root 'welcome#index'

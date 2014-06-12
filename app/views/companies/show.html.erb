@@ -59,7 +59,7 @@
 </div>
 
 <div class="col-sm-4">
-  <!-- <div id='map2' style='width: 100%; height: 200px;'></div> -->
+  <!-- <div id='map2' style='width: 100%; height: 300px;'></div> -->
   <%= javascript_tag do %>
   var map2 = L.mapbox.map('map2', 'cubicalweb.iejodo9f')
       .setView(['<%= @company.latitude %>', '<%= @company.longitude %>'], 15);
@@ -84,7 +84,7 @@
   <% end %>
 
   <br>
-  <h3 class="text-center">Other Companies Nearby</h3>
+  <h3 class="text-center">Other Nearby Companies</h3>
 
   <% for company in @company.nearbys(10).limit(3) %>
     <div class="closeby-company">

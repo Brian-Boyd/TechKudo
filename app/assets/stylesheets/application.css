@@ -13,6 +13,7 @@
  *= require bootstrap
  *= require bootstrap-theme
  *= require rails_bootstrap_forms
+ *= require jquery.ui.autocomplete
  *= require_tree .
  *= require_self
  */
@@ -84,11 +85,16 @@ body {
   line-height: 0;
   margin-right: 20px;
   border: 1px dashed red;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .kudo-detail-wrapper {
   float: left;
   border: 1px dashed red;
+  display: inline-block;
+  vertical-align: top;
+  max-width: 80%;
 }
 
 li.kudo {
@@ -99,19 +105,4 @@ li.kudo {
 
 ul.kudo-list {
   padding-left: 0;
-}
-
-/*li.kudo .kudo-icon-wrapper .kudo-detail-wrapper {
-    display: inline-block;
-    vertical-align: top;
-}*/
-
-.kudo-icon-wrapper {
-  display: inline-block;
-  vertical-align: top;
-}
-
-.kudo-detail-wrapper {
-  display: inline-block;
-  vertical-align: top;
 }

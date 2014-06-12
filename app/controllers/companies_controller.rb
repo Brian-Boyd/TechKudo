@@ -2,8 +2,6 @@ class CompaniesController < ApplicationController
   layout "companies_map", only: :index
   before_action :set_company, only: [:show, :edit, :update, :destroy]
 
-  # GET /companies
-  # GET /companies.json
   def index
     if params[:search].present?
       @companies = Company.near(params[:search], 3, order: :distance)
@@ -37,26 +35,20 @@ class CompaniesController < ApplicationController
     end
     respond_to do |format|
       format.html
-      format.json { render json: @geojson }  # respond with the created JSON object
+      format.json { render json: @geojson }
     end
   end
 
-  # GET /companies/1
-  # GET /companies/1.json
   def show
   end
 
-  # GET /companies/new
   def new
     @company = Company.new
   end
 
-  # GET /companies/1/edit
   def edit
   end
 
-  # POST /companies
-  # POST /companies.json
   def create
     @company = Company.new(company_params)
 
@@ -71,8 +63,6 @@ class CompaniesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /companies/1
-  # PATCH/PUT /companies/1.json
   def update
     respond_to do |format|
       if @company.update(company_params)
@@ -85,8 +75,6 @@ class CompaniesController < ApplicationController
     end
   end
 
-  # DELETE /companies/1
-  # DELETE /companies/1.json
   def destroy
     @company.destroy
     respond_to do |format|
@@ -95,13 +83,16 @@ class CompaniesController < ApplicationController
     end
   end
 
+  def autocomplete
+    @company = Company.order(:name).where("name like ?", "%#{params[:term]}%")
+    render json: @company.map{|u| {label: u.name, id: u.id}}
+  end
+
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_company
       @company = Company.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def company_params
       params.require(:company).permit(:name, :address, :city, :state, :zip_code, :phone, :main_url, :career_url)
     end

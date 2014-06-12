@@ -1,30 +1,22 @@
 class KudosController < ApplicationController
   before_action :set_kudo, only: [:show, :edit, :update, :destroy]
 
-  # GET /kudos
-  # GET /kudos.json
   def index
     @kudos = Kudo.all
   end
 
-  # GET /kudos/1
-  # GET /kudos/1.json
   def show
   end
 
-  # GET /kudos/new
   def new
     @kudo = Kudo.new
   end
 
-  # GET /kudos/1/edit
   def edit
   end
 
-  # POST /kudos
-  # POST /kudos.json
   def create
-    @company = Company.find(params[:company][:company_id])
+    @company = Company.find(params[:kudo][:company_id])
     @kudo = @company.kudos.new kudo_params.merge({user_id: current_user.id})
     respond_to do |format|
       if @kudo.save
@@ -37,8 +29,6 @@ class KudosController < ApplicationController
     end
   end
 
-  # PATCH/PUT /kudos/1
-  # PATCH/PUT /kudos/1.json
   def update
     respond_to do |format|
       if @kudo.update(kudo_params)
@@ -51,8 +41,6 @@ class KudosController < ApplicationController
     end
   end
 
-  # DELETE /kudos/1
-  # DELETE /kudos/1.json
   def destroy
     @kudo.destroy
     respond_to do |format|
@@ -62,12 +50,10 @@ class KudosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_kudo
       @kudo = Kudo.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def kudo_params
       params.require(:kudo).permit(:comment, :company_id, :user_id)
     end

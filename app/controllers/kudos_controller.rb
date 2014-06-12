@@ -55,6 +55,6 @@ class KudosController < ApplicationController
     end
 
     def kudo_params
-      params.require(:kudo).permit(:comment, :company_id, :user_id)
+      params.require(:kudo).permit(:comment, :company_id, :relationship, :user_id)
     end
 end

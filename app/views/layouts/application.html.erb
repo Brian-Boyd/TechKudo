@@ -25,24 +25,26 @@
       <ul class="nav navbar-nav">
         <li><%= link_to "Companies", companies_path %></li>
         <li><%= link_to "Give Kudos", new_kudo_path %></li>
-        <li><%= link_to "About Us", welcome_about_path %></li>
-        <li><%= link_to "Contact", welcome_contact_path %></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Addition Links <b class="caret"></b></a>
           <ul class="dropdown-menu">
+            <li><%= link_to "About Us", welcome_about_path %></li>
+            <li><%= link_to "Contact", welcome_contact_path %></li>
             <li><%= link_to "Employer", welcome_employer_path %></li>
             <li><%= link_to "Terms of Service", welcome_terms_path %></li>
             <li><%= link_to "Privacy Policy", welcome_privacy_path %></li>
           </ul>
         </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
           <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to "Sign Up", new_user_registration_path %></li>
           <li><%= link_to "Sign In", new_user_session_path %></li>
         <% end %>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li>Add Search Here</li>
       </ul>
     </div>
   </div>
@@ -66,6 +68,12 @@
 
   <%= yield %>
 
+</div>
+
+<div id="footer">
+  <div class="container">
+    <p class="text-muted">copyright TechKudo</a></p>
+  </div>
 </div>
 
 </body>

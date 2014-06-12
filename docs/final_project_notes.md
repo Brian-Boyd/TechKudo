@@ -1,6 +1,5 @@
 # Final Project: TechKudo
 
-Live Demo: <http://TechKudo.com>  
 Code: <http://GitHub.com/Brian-Boyd/TechKudo>
 
 ## Overview:
@@ -8,7 +7,7 @@ Code: <http://GitHub.com/Brian-Boyd/TechKudo>
 TechKudo is a directory of technology companies, where they are located, where to find job openings and kudos from people that know the company. A job seekers starting point.
 
 #### TechKudo [tek koo doh]
-* an admiring personal remark from a person given to a technology compan
+* an admiring personal remark from a person given to a technology company
 
  
 ### How it Works:

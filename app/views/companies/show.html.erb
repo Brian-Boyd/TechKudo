@@ -3,7 +3,7 @@
 <div class="col-sm-8">
   <div class="company-container">
     <div class="company-icon-wrapper">
-      <img src="http://placehold.it/100x100">
+      <img src="http://lorempixel.com/100/100/sports/">
     </div>
     <div class="company-detail-wrapper">
       <h2><%= @company.name %></h2>
@@ -22,7 +22,7 @@
 
   <div class="kudo-container">
     <div class="kudo-icon-wrapper">
-      <img src="http://placehold.it/50x50">
+      <img src="http://lorempixel.com/40/40/">
     </div>
     <div class="kudo-detail-wrapper">
     <%= form_for @company, html: { class: 'form-horizontal' } do |f| %>
@@ -46,7 +46,7 @@
       <% @company.kudos.each do |kudo| %>
       <li class="kudo">
         <div class="kudo-icon-wrapper">
-          <img src="http://placehold.it/50x50">
+          <img src="http://lorempixel.com/40/40/sports/">
         </div>
         <div class="kudo-detail-wrapper">
           <p><%= kudo.comment %></p>
@@ -59,7 +59,7 @@
 </div>
 
 <div class="col-sm-4">
-  <!-- <div id='map2' style='width: 100%; height: 300px;'></div> -->
+  <div id='map2' style='width: 100%; height: 300px;'></div>
   <%= javascript_tag do %>
   var map2 = L.mapbox.map('map2', 'cubicalweb.iejodo9f')
       .setView(['<%= @company.latitude %>', '<%= @company.longitude %>'], 15);
@@ -96,4 +96,16 @@
   <% end %>
 
 </div>
+
+<h2>Get this search to work in menu bar</h2>
+
+
+<%= form_for @company, class: "form-search" do |f| %>
+  <div class="input-append">
+    <%= text_field_tag :query, params[:query], placeholder: 'Company name.....', class: "span2 search-query" %>
+    <%= button_tag class: "btn btn-primary btn-xs" do %>
+    <span class="glyphicon glyphicon-search"></span>
+<% end %>
+  </div>
+<% end %>
 

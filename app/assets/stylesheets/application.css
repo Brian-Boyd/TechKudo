@@ -55,19 +55,19 @@ body {
   border-radius: 5px;
   padding: 10px;
   overflow: hidden;
-  border: 1px dashed red;
+  /*border: 1px dashed red;*/
 }
 
 .company-icon-wrapper {
   float: left;
   line-height: 0;
   margin-right: 20px;
-  border: 1px dashed red;
+  /*border: 1px dashed red;*/
 }
 
 .company-detail-wrapper {
   float: left;
-  border: 1px dashed red;
+  /*border: 1px dashed red;*/
 }
 
 .kudo-container {
@@ -77,24 +77,24 @@ body {
   padding: 10px;
   margin-top: 20px;
   overflow: hidden;
-  border: 1px dashed red;
+  /*border: 1px dashed red;*/
 }
 
 .kudo-icon-wrapper {
   float: left;
   line-height: 0;
   margin-right: 20px;
-  border: 1px dashed red;
   display: inline-block;
   vertical-align: top;
+  /*border: 1px dashed red;*/
 }
 
 .kudo-detail-wrapper {
   float: left;
-  border: 1px dashed red;
   display: inline-block;
   vertical-align: top;
-  max-width: 80%;
+  max-width: 75%;
+  /*border: 1px dashed red;*/
 }
 
 li.kudo {
@@ -105,4 +105,25 @@ li.kudo {
 
 ul.kudo-list {
   padding-left: 0;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 50px;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 40px;
+  background-color: #f5f5f5;
 }

@@ -8,7 +8,6 @@ log/*
 docs/private.md
 docs/maps/*
 config/initializers/omniauth.rb
-app/assets/javascripts/companies1.js.coffee.1
 app/views/companies/index.html.erb.backup
 
 .DS_Store

@@ -6,9 +6,9 @@ class CompaniesController < ApplicationController
     if params[:search].present?
       @companies = Company.near(params[:search], 3, order: :distance)
     else
-      @companies = Company.all
+      @companies = Company.order("name asc")
     end
-    @companies = Company.all
+    # @companies = Company.all
     @geojson = Array.new
 
     @companies.each do |company|
@@ -40,6 +40,7 @@ class CompaniesController < ApplicationController
   end
 
   def show
+    @kudo = Kudo.new
   end
 
   def new

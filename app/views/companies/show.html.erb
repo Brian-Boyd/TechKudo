@@ -25,16 +25,22 @@
       <img src="http://lorempixel.com/40/40/">
     </div>
     <div class="kudo-detail-wrapper">
-    <%= form_for @company, html: { class: 'form-horizontal' } do |f| %>
+    <%= form_for @kudo, html: { class: 'form-horizontal' } do |f| %>
+
+      <%= f.hidden_field :company_id, value: @company.id %>
+
       <div class="form-group">
-        <div class="col-lg-10">
-          <%= f.text_area :kudos, rows: "4", cols: "40", placeholder: "Leave a Kudo for this company." %>
-        </div>
+        <%= f.label :relationship %><br>
+        <%= select_tag :relationship, options_for_select(Kudo::RELATIONSHIP), prompt: "Select your relationship" %>
       </div>
+
       <div class="form-group">
-        <div class="col-lg-10 col-lg-offset-2">
-          <%= f.submit 'Submit', class: 'btn btn-primary' %>
-        </div>
+        <%= f.label :comment %><br>
+        <%= f.text_area :comment, rows: "4", cols: "40", placeholder: "Leave a Kudo for this company." %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit %>
       </div>
     <% end %>
     </div>
@@ -96,16 +102,3 @@
   <% end %>
 
 </div>
-
-<h2>Get this search to work in menu bar</h2>
-
-
-<%= form_for @company, class: "form-search" do |f| %>
-  <div class="input-append">
-    <%= text_field_tag :query, params[:query], placeholder: 'Company name.....', class: "span2 search-query" %>
-    <%= button_tag class: "btn btn-primary btn-xs" do %>
-    <span class="glyphicon glyphicon-search"></span>
-<% end %>
-  </div>
-<% end %>
-

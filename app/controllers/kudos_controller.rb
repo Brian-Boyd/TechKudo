@@ -16,8 +16,8 @@ class KudosController < ApplicationController
   end
 
   def create
-    @company = Company.find(params[:kudo][:company_id])
-    @kudo = @company.kudos.new kudo_params.merge({user_id: current_user.id})
+    # @company = Company.find(params[:kudo][:company_id])
+    @kudo = Kudo.new kudo_params.merge({user_id: current_user.id})
     respond_to do |format|
       if @kudo.save
         format.html { redirect_to @company, notice: 'Kudo was successfully created.' }

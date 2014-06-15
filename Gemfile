@@ -8,7 +8,7 @@ gem 'devise'
 gem "omniauth"
 gem 'omniauth-facebook'
 gem 'geocoder'
-gem 'carrierwave'
+gem 'paperclip'
 gem 'jquery-ui-rails'
 
 # group :development do

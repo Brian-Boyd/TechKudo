@@ -19,7 +19,7 @@
 
   <div class="form-group">
     <%= f.label :relationship %><br>
-    <%= select_tag :relationship, options_for_select(Kudo::RELATIONSHIP), prompt: "Select your relationship" %>
+    <%= f.select :relationship, options_for_select(Kudo::RELATIONSHIP), prompt: "Select your relationship" %>
   </div>
 
   <div class="form-group">

@@ -16,16 +16,20 @@ class KudosController < ApplicationController
   end
 
   def create
-    # @company = Company.find(params[:kudo][:company_id])
-    @kudo = Kudo.new kudo_params.merge({user_id: current_user.id})
-    respond_to do |format|
-      if @kudo.save
-        format.html { redirect_to @company, notice: 'Kudo was successfully created.' }
-        format.json { render :show, status: :created, location: @kudo }
-      else
-        format.html { render :new }
-        format.json { render json: @kudo.errors, status: :unprocessable_entity }
+    @company = Company.where(id: params[:kudo][:company_id]).first
+    if @company
+      @kudo = @company.kudos.new kudo_params.merge({user_id: current_user.id})
+      respond_to do |format|
+        if @kudo.save
+          format.html { redirect_to @company, notice: 'Kudo was successfully created.' }
+          format.json { render :show, status: :created, location: @kudo }
+        else
+          format.html { render :new }
+          format.json { render json: @kudo.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to :back, notice: "Please select a company first"
     end
   end
 

@@ -1,0 +1,146 @@
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <%= link_to "TechKudo", root_path, class: "navbar-brand" %>
+  </div>
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav">
+      <li><%= link_to "Companies", companies_path %></li>
+      <li><%= link_to "Give Kudos", new_kudo_path %></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Additional Links <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><%= link_to "About Us", welcome_about_path %></li>
+          <li><%= link_to "Contact", welcome_contact_path %></li>
+          <li><%= link_to "Employer", welcome_employer_path %></li>
+          <li><%= link_to "Terms of Service", welcome_terms_path %></li>
+          <li><%= link_to "Privacy Policy", welcome_privacy_path %></li>
+        </ul>
+      </li>
+      <% if current_user %>
+        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li>
+          <a href="#" class="top-nav-right" data-toggle="modal" data-target="#fb-login">Sign In</a>
+        </li>
+      <% end %>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" id="header-search" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<% if flash[:notice] %>
+  <div class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= flash[:notice] %>
+  </div>
+<% elsif flash[:error] %>
+  <div class="alert alert-error">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= flash[:error] %>
+  </div>
+<% elsif flash[:alert] %>
+  <div class="alert">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= flash[:alert] %>
+  </div>
+<% end %>
+
+<!-- FaceBook Login -->
+<div class="modal fade" id="fb-login" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="loginLabel">Login</h4>
+      </div>
+      <div class="modal-body">
+
+        <div id="user_nav" class="text-center">
+          <% if current_user %>
+            Signed in as <strong><%= current_user.name %></strong>!
+            <%= link_to "Sign out", signout_path, id: "sign_out" %>
+          <% else %>
+            <%= link_to "Sign in with Facebook", "/auth/facebook", class: "btn btn-default" %>
+          <% end %>
+        </div>
+        <br>
+
+        <p class="text-center">By signing in with Facebook, you agree to our <a href="/welcome/terms" target="_blank">Terms of Service</a> & <a href="/welcome/privacy" target="_blank">Privacy Policy</a>.</p>
+
+        <p class="text-center">You can also <a href="#" data-toggle="modal" data-target="#signup">SIGN UP</a> or <a href="#" data-toggle="modal" data-target="#login">SIGN IN</a> with your email.</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Login -->
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="loginLabel">Email Login</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_tag "/users/sign_in", method: "post" do %>
+        
+          <div><label for="user_email">Email</label><br>
+          <input autofocus="autofocus" id="user_email" name="user[email]" type="email" value=""></div>
+
+          <div><label for="user_password">Password</label><br>
+            <input autocomplete="off" id="user_password" name="user[password]" type="password"></div>
+
+            <div><input name="user[remember_me]" type="hidden" value="0"><input id="user_remember_me" name="user[remember_me]" type="checkbox" value="1"> <label for="user_remember_me">Remember me</label></div>
+
+          <div><input name="commit" type="submit" value="Sign in"></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Signup -->
+<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="loginLabel">Sign Up</h4>
+      </div>
+      <div class="modal-body">
+
+        <%= form_tag "/users", method: "post" do %>
+          <div><label for="user_email">Email</label><br>
+          <input autofocus="autofocus" id="user_email" name="user[email]" type="email" value=""></div>
+
+          <div><label for="user_password">Password</label><br>
+            <input autocomplete="off" id="user_password" name="user[password]" type="password"></div>
+
+          <div><label for="user_password_confirmation">Password confirmation</label><br>
+            <input autocomplete="off" id="user_password_confirmation" name="user[password_confirmation]" type="password"></div>
+
+          <div><input name="commit" type="submit" value="Sign up"></div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

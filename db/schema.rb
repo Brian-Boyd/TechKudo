@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140610145242) do
+ActiveRecord::Schema.define(version: 20140613181544) do
 
   create_table "companies", force: true do |t|
     t.string   "name"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20140610145242) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "relationship"
   end
 
   create_table "rating_user_join_tables", force: true do |t|

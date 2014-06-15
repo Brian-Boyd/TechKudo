@@ -1,4 +1,4 @@
-<%= form_for @kudo, html: { class: 'form-horizontal' } do |f| %>
+<%= form_for @kudo, url: kudos_path, html: { multipart: true, class: 'form-horizontal' } do |f| %>
   <% if @kudo.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@kudo.errors.count, "error") %> prohibited this kudo from being saved:</h2>
@@ -20,6 +20,11 @@
   <div class="form-group">
     <%= f.label :relationship %><br>
     <%= f.select :relationship, options_for_select(Kudo::RELATIONSHIP), prompt: "Select your relationship" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
   </div>
 
   <div class="form-group">

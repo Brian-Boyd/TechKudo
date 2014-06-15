@@ -9,6 +9,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :location
       t.string :url
       t.string :bio
+      t.attachment :image
 
       ## Recoverable
       t.string   :reset_password_token

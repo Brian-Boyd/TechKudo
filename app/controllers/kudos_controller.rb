@@ -16,6 +16,7 @@ class KudosController < ApplicationController
   end
 
   def create
+    # @kudo = Kudo.create( kudo_params ) # paperclip instructions, but duplicted kudo
     @company = Company.where(id: params[:kudo][:company_id]).first
     if @company
       @kudo = @company.kudos.new kudo_params.merge({user_id: current_user.id})
@@ -59,6 +60,6 @@ class KudosController < ApplicationController
     end
 
     def kudo_params
-      params.require(:kudo).permit(:comment, :company_id, :relationship, :user_id)
+      params.require(:kudo).permit(:comment, :company_id, :relationship, :user_id, :image)
     end
 end

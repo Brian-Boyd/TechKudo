@@ -11,7 +11,7 @@ class CreateCompanies < ActiveRecord::Migration
       t.string :career_url
       t.float :latitude, precision: 10
       t.float :longitude, precision: 10
-      t.integer :distance
+      t.attachment :image
 
       t.timestamps
     end

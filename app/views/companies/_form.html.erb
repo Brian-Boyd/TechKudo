@@ -1,5 +1,5 @@
 <div class="well">
-  <%= form_for @company, html: { class: 'form-horizontal' } do |f| %>
+  <%= form_for @company, url: companies_path, html: { multipart: true, class: 'form-horizontal' } do |f| %>
     <% if @company.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:</h2>
@@ -64,6 +64,12 @@
         <%= f.label :career_url, class: 'col-lg-2 control-label' %><br>
         <div class="col-lg-10">
           <%= f.text_field :career_url, size: 30 %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :image, class: 'col-lg-2 control-label' %><br>
+        <div class="col-lg-10">
+          <%= f.file_field :image %>
         </div>
       </div>
       <div class="form-group">

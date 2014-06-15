@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140613181544) do
+ActiveRecord::Schema.define(version: 20140606150204) do
 
   create_table "companies", force: true do |t|
     t.string   "name"
@@ -24,7 +24,10 @@ ActiveRecord::Schema.define(version: 20140613181544) do
     t.string   "career_url"
     t.float    "latitude"
     t.float    "longitude"
-    t.integer  "distance"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -68,9 +71,13 @@ ActiveRecord::Schema.define(version: 20140613181544) do
     t.string   "comment"
     t.integer  "company_id"
     t.integer  "user_id"
+    t.string   "relationship"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "relationship"
   end
 
   create_table "rating_user_join_tables", force: true do |t|
@@ -109,6 +116,10 @@ ActiveRecord::Schema.define(version: 20140613181544) do
     t.string   "location"
     t.string   "url"
     t.string   "bio"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -123,7 +134,6 @@ ActiveRecord::Schema.define(version: 20140613181544) do
     t.string   "uid"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
-    t.string   "image"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140606150204) do
+ActiveRecord::Schema.define(version: 20140606132404) do
 
   create_table "companies", force: true do |t|
     t.string   "name"
@@ -32,34 +32,6 @@ ActiveRecord::Schema.define(version: 20140606150204) do
     t.datetime "updated_at"
   end
 
-  create_table "company_kudo_join_tables", force: true do |t|
-    t.integer  "company_id"
-    t.integer  "kudo_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "company_user_join_tables", force: true do |t|
-    t.integer  "company_id"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "image_user_join_tables", force: true do |t|
-    t.integer  "image_id"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "images", force: true do |t|
-    t.string   "name"
-    t.integer  "kudo_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "kudo_user_join_tables", force: true do |t|
     t.integer  "user_id"
     t.integer  "company_id"
@@ -76,34 +48,6 @@ ActiveRecord::Schema.define(version: 20140606150204) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "rating_user_join_tables", force: true do |t|
-    t.integer  "rating_id"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "ratings", force: true do |t|
-    t.integer  "comp_benefits"
-    t.integer  "perks"
-    t.integer  "culture_values"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "relationship_user_join_tables", force: true do |t|
-    t.integer  "relationship_id"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "relationships", force: true do |t|
-    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

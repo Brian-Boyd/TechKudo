@@ -27,12 +27,6 @@ u.save!(validate: false)
 
 #############################################################
 
-Relationship.create!( name: "employee" )
-Relationship.create!( name: "former_employee" )
-Relationship.create!( name: "other" )
-
-#############################################################
-
 Company.create!(
   name:       "Intellectual Alchemy",
   address:    "360 Concord St, Suite 300",

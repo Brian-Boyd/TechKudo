@@ -31,22 +31,27 @@
       <%= f.hidden_field :company_id, value: @company.id %>
 
       <div class="form-group">
-        <%= f.label :relationship %><br>
-        <%= f.select :relationship, options_for_select(Kudo::RELATIONSHIP), prompt: "Select your relationship" %>
+        <%= f.label :relationship, class: 'col-lg-3 control-label' %>
+        <div class="col-lg-9">
+          <%= f.select :relationship, options_for_select(Kudo::RELATIONSHIP), { prompt: "Select your relationship" }, { class: 'form-control selectpicker' } %>
+        </div>
       </div>
-
       <div class="form-group">
-        <%= f.label :image %><br>
-        <%= f.file_field :image %>
+        <%= f.label :image, class: 'col-lg-3 control-label' %>
+        <div class="col-lg-9">
+          <%= f.file_field :image, class: "form-control" %>
+        </div>
       </div>
-
       <div class="form-group">
-        <%= f.label :comment %><br>
-        <%= f.text_area :comment, rows: "4", cols: "40", placeholder: "Leave a Kudo for this company." %>
+        <%= f.label :comment, class: 'col-lg-3 control-label' %>
+        <div class="col-lg-9">
+          <%= f.text_area :comment, rows: "4", cols: "40", class: "form-control", placeholder: "Leave a Kudo for this company." %>
+        </div>
       </div>
-
       <div class="form-group">
-        <%= f.submit %>
+        <div class="col-lg-9 col-lg-offset-3">
+          <%= f.submit 'Give Kudos', class: 'btn btn-primary' %>
+        </div>
       </div>
     <% end %>
     </div>

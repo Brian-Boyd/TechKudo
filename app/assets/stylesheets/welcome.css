@@ -1,7 +1,10 @@
+body {
+  background: url(/assets/bg.jpg) no-repeat center fixed;
+}
 
  .first-fourth {
-  background-image: url(/assets/home1.jpg);
-  margin: 0;
+  /*background-image: url(/assets/home1.jpg);*/
+  margin: -173px 0 0;
   padding: 0;
   width: 100%;
   /*height: 100%;*/
@@ -14,7 +17,7 @@
  }
 
  .third-fourth {
-  background-image: url(/assets/home2.jpg);
+  /*background-image: url(/assets/home2.jpg);*/
   margin: 0;
   padding: 0;
   width: 100%;

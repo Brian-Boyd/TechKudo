@@ -1,82 +1,90 @@
-<div class="well">
-  <%= form_for @company, url: companies_path, html: { multipart: true, class: 'form-horizontal' } do |f| %>
-    <% if @company.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:</h2>
+<div class="form-container">
+  <div class="well">
+    <%= form_for @company, url: companies_path, html: { multipart: true, class: 'form-horizontal' } do |f| %>
+      <% if @company.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:</h2>
 
-        <ul>
-        <% @company.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
+          <ul>
+          <% @company.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <fieldset>
+        <%- if params[:action] == 'new' %>
+          <legend>Add New Company</legend>
+        <%- elsif params[:action] == 'edit' %>
+          <legend>Edit <%= link_to @company.name, @company %></legend>
+        <%- end %>
+        <div class="form-group">
+          <%= f.label :name, class: 'col-lg-2 control-label' %>
+          <div class="col-lg-10">
+            <%= f.text_field :name, size: 30, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :address, class: 'col-lg-2 control-label' %>
+          <div class="col-lg-10">
+            <%= f.text_field :address, size: 30, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :city, class: 'col-lg-2 control-label' %>
+          <div class="col-lg-10">
+            <%= f.text_field :city, size: 30, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :state, class: 'col-lg-2 control-label' %>
+          <div class="col-lg-10">
+            <%= f.text_field :state, size: 30, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :zip_code, class: 'col-lg-2 control-label' %>
+          <div class="col-lg-10">
+            <%= f.text_field :zip_code, size: 30, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :phone, class: 'col-lg-2 control-label' %>
+          <div class="col-lg-10">
+            <%= f.text_field :phone, size: 30, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :main_url, class: 'col-lg-2 control-label' %>
+          <div class="col-lg-10">
+            <%= f.text_field :main_url, size: 30, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :career_url, class: 'col-lg-2 control-label' %>
+          <div class="col-lg-10">
+            <%= f.text_field :career_url, size: 30, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :image, class: 'col-lg-2 control-label' %>
+          <div class="col-lg-10">
+            <%= f.file_field :image, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-lg-10 col-lg-offset-2">
+            <%- if params[:action] == 'new' %>
+              <%= f.submit 'Add New Company', class: 'btn btn-primary' %> or 
+              <%= link_to "cancel", companies_path %>
+            <%- elsif params[:action] == 'edit' %>
+              <%= f.submit 'Edit Company', class: 'btn btn-primary' %> or 
+              <%= link_to "cancel", companies_path %>
+            <%- end %>
+          </div>
+        </div>
+      </fieldset>
     <% end %>
-
-    <fieldset>
-      <%- if params[:action] == 'new' %>
-        <legend>Add New Company</legend>
-      <%- elsif params[:action] == 'edit' %>
-        <legend>Edit <%= link_to @company.name, @company %></legend>
-      <%- end %>
-      <div class="form-group">
-        <%= f.label :name, class: 'col-lg-2 control-label' %><br>
-        <div class="col-lg-10">
-          <%= f.text_field :name, size: 30 %>
-        </div>
-      </div>
-      <div class="form-group">
-        <%= f.label :address, class: 'col-lg-2 control-label' %><br>
-        <div class="col-lg-10">
-          <%= f.text_field :address, size: 30 %>
-        </div>
-      </div>
-      <div class="form-group">
-        <%= f.label :city, class: 'col-lg-2 control-label' %><br>
-        <div class="col-lg-10">
-          <%= f.text_field :city, size: 30 %>
-        </div>
-      </div>
-      <div class="form-group">
-        <%= f.label :state, class: 'col-lg-2 control-label' %><br>
-        <div class="col-lg-10">
-          <%= f.text_field :state, size: 30 %>
-        </div>
-      </div>
-      <div class="form-group">
-        <%= f.label :zip_code, class: 'col-lg-2 control-label' %><br>
-        <div class="col-lg-10">
-          <%= f.text_field :zip_code, size: 30 %>
-        </div>
-      </div>
-      <div class="form-group">
-        <%= f.label :phone, class: 'col-lg-2 control-label' %><br>
-        <div class="col-lg-10">
-          <%= f.text_field :phone, size: 30 %>
-        </div>
-      </div>
-      <div class="form-group">
-        <%= f.label :main_url, class: 'col-lg-2 control-label' %><br>
-        <div class="col-lg-10">
-          <%= f.text_field :main_url, size: 30 %>
-        </div>
-      </div>
-      <div class="form-group">
-        <%= f.label :career_url, class: 'col-lg-2 control-label' %><br>
-        <div class="col-lg-10">
-          <%= f.text_field :career_url, size: 30 %>
-        </div>
-      </div>
-      <div class="form-group">
-        <%= f.label :image, class: 'col-lg-2 control-label' %><br>
-        <div class="col-lg-10">
-          <%= f.file_field :image %>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-lg-10 col-lg-offset-2">
-          <%= f.submit 'Submit', class: 'btn btn-primary' %>
-        </div>
-      </div>
-    </fieldset>
-  <% end %>
+  </div>
 </div>

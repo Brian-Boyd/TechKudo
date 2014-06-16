@@ -10,22 +10,11 @@
   <div class="navbar-collapse collapse navbar-responsive-collapse">
     <ul class="nav navbar-nav">
       <li><%= link_to "Companies", companies_path %></li>
-      <li><%= link_to "Give Kudos", new_kudo_path %></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Additional Links <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><%= link_to "About Us", welcome_about_path %></li>
-          <li><%= link_to "Contact", welcome_contact_path %></li>
-          <li><%= link_to "Employer", welcome_employer_path %></li>
-          <li><%= link_to "Terms of Service", welcome_terms_path %></li>
-          <li><%= link_to "Privacy Policy", welcome_privacy_path %></li>
-        </ul>
-      </li>
       <% if current_user %>
-        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to "Give Kudos", new_kudo_path %></li>
       <% else %>
         <li>
-          <a href="#" class="top-nav-right" data-toggle="modal" data-target="#fb-login">Sign In</a>
+          <a href="#" data-toggle="modal" data-target="#fb-login">Give Kudos</a>
         </li>
       <% end %>
     </ul>
@@ -36,9 +25,16 @@
           <div class="form-group">
             <input type="text" class="form-control" id="header-search" placeholder="Search">
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary">Search</button>
         </form>
       </li>
+      <% if current_user %>
+        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li>
+          <a href="#" data-toggle="modal" data-target="#fb-login">Sign In</a>
+        </li>
+      <% end %>
     </ul>
   </div>
 </div>
@@ -62,7 +58,7 @@
 
 <!-- FaceBook Login -->
 <div class="modal fade" id="fb-login" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog well">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -92,7 +88,7 @@
 
 <!-- Login -->
 <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog well">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -101,15 +97,25 @@
       <div class="modal-body">
         <%= form_tag "/users/sign_in", method: "post" do %>
         
-          <div><label for="user_email">Email</label><br>
-          <input autofocus="autofocus" id="user_email" name="user[email]" type="email" value=""></div>
+          <div>
+            <label for="user_email">Email</label><br>
+            <input autofocus="autofocus" id="user_email" name="user[email]" type="email" value="">
+          </div>
 
-          <div><label for="user_password">Password</label><br>
-            <input autocomplete="off" id="user_password" name="user[password]" type="password"></div>
+          <div>
+            <label for="user_password">Password</label><br>
+            <input autocomplete="off" id="user_password" name="user[password]" type="password">
+          </div>
 
-            <div><input name="user[remember_me]" type="hidden" value="0"><input id="user_remember_me" name="user[remember_me]" type="checkbox" value="1"> <label for="user_remember_me">Remember me</label></div>
+          <div>
+            <input name="user[remember_me]" type="hidden" value="0">
+            <input id="user_remember_me" name="user[remember_me]" type="checkbox" value="1">
+            <label for="user_remember_me">Remember me</label>
+          </div>
 
-          <div><input name="commit" type="submit" value="Sign in"></div>
+          <div>
+            <input name="commit" type="submit" value="Sign in">
+          </div>
         <% end %>
       </div>
     </div>
@@ -119,7 +125,7 @@
 
 <!-- Signup -->
 <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog well">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -128,17 +134,63 @@
       <div class="modal-body">
 
         <%= form_tag "/users", method: "post" do %>
-          <div><label for="user_email">Email</label><br>
-          <input autofocus="autofocus" id="user_email" name="user[email]" type="email" value=""></div>
 
-          <div><label for="user_password">Password</label><br>
-            <input autocomplete="off" id="user_password" name="user[password]" type="password"></div>
+          <div>
+            <label for="user_email" class="col-md-3 control-label">Email</label><br>
+            <input autofocus="autofocus" id="user_email" name="user[email]" type="email" value="" class="col-md-9 form-control">
+          </div>
 
-          <div><label for="user_password_confirmation">Password confirmation</label><br>
-            <input autocomplete="off" id="user_password_confirmation" name="user[password_confirmation]" type="password"></div>
+          <div>
+            <label for="user_password" class="col-md-3 control-label">Password</label><br>
+            <input autocomplete="off" id="user_password" name="user[password]" type="password" class="col-md-9 form-control">
+          </div>
 
-          <div><input name="commit" type="submit" value="Sign up"></div>
+          <div>
+            <label for="user_password_confirmation" class="col-md-3 control-label">Password confirmation</label><br>
+            <input autocomplete="off" id="user_password_confirmation" name="user[password_confirmation]" type="password" class="col-md-9 form-control">
+          </div>
 
+          <div>
+            <input name="commit" type="submit" value="Sign up" class="btn btn-primary">
+          </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Give Kudos - NOT CURRENTLY BEING USED -->
+<div class="modal fade" id="give-kudos" tabindex="-1" role="dialog" aria-labelledby="kudoLabel" aria-hidden="true">
+  <div class="modal-dialog well">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="kudoLabel">Give Kudos</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_tag "/users/sign_in", method: "post", url: kudos_path, html: { multipart: true, class: 'form-horizontal' } do %>
+        
+          <div>
+            <label for="user_email">Email</label><br>
+            <input autofocus="autofocus" id="user_email" name="user[email]" type="email" value="">
+          </div>
+
+          <div>
+            <label for="user_password">Password</label><br>
+            <input autocomplete="off" id="user_password" name="user[password]" type="password">
+          </div>
+
+          <div>
+            <input name="user[remember_me]" type="hidden" value="0">
+            <input id="user_remember_me" name="user[remember_me]" type="checkbox" value="1">
+            <label for="user_remember_me">Remember me</label>
+          </div>
+
+          <div>
+            <input name="commit" type="submit" value="Sign in">
+          </div>
         <% end %>
       </div>
     </div>

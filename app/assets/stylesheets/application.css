@@ -18,6 +18,18 @@
  *= require_self
  */
 
+ .modal-body {
+  border: 1px dashed red;
+ }
+
+ .modal-content {
+  border: 1px dashed blue;
+ }
+
+.form-container {
+  width: 400px;
+  margin: 0 auto;
+}
 
 body {
   margin-top: 60px;

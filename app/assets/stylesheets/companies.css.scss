@@ -30,9 +30,8 @@ a {
   position:absolute;
   width:33.3333%;
   height:100%;
-  top:70px;left:0;
+  top:40px;left:0;
   overflow:hidden;
-  border-right:1px solid rgba(0,0,0,0.25);
   }
 .pad2 {
   padding:20px;
@@ -42,8 +41,8 @@ a {
   }
 .map {
   position:absolute;
-  left:33.3333%;
-  width:66.6666%;
+  left:25%;
+  width:75%;
   top:0;bottom:0;
   }
 .heading {
@@ -60,12 +59,15 @@ a {
   }
 .listings .item {
   display:block;
+  background:rgba(0,0,0,0.8);
   border-bottom:1px solid #eee;
   padding:10px;
   text-decoration:none;
   }
   .listings .item:last-child { border-bottom:none; }
   .listings .item .title {
+    font-size:1.4em;
+    line-height: 1.2em;
     display:block;
     color:#00853e;
     font-weight:700;

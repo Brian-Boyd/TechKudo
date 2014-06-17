@@ -8,6 +8,8 @@ log/*
 docs/private.md
 docs/maps/*
 config/initializers/omniauth.rb
-app/views/companies/index.html.erb.backup
+config/initializers/omniauth.yml
+app/views/companies/index.html.erb.original-map
+app/public/system/*
 
 .DS_Store

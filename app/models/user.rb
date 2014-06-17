@@ -6,12 +6,8 @@ class User < ActiveRecord::Base
 
   has_many :company_user_join_tables
   has_many :companies, through: :company_user_join_table
-  # has_many :kudos
-  # has_many :kudo_user_join_table
-  # has_many :kudos, through: :company_kudo_join_table
   has_many :rating_user_join_table
   has_many :ratings, through: :rating_user_join_table
-  # has_many :images, as: :imageable
   has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
@@ -34,9 +30,3 @@ class User < ActiveRecord::Base
   end
 
 end
-
-
-  # has_many :
-  # has_many :, through: :
-  # has_many :
-  # has_many :, through: :

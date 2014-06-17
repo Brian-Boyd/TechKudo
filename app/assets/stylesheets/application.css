@@ -18,9 +18,23 @@
  *= require_self
  */
 
-.form-container {
-  width: 400px;
+ .ui-autocomplete {
+  z-index: 999999
+ }
+
+.max-width-container {
+  max-width: 800px;
   margin: 0 auto;
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.alert {
+max-width: 50%;
+margin: 0 auto 20px;
 }
 
 body {

@@ -20,61 +20,61 @@
           <legend>Edit <%= link_to @company.name, @company %></legend>
         <%- end %>
         <div class="form-group">
-          <%= f.label :name, class: 'col-lg-2 control-label' %>
-          <div class="col-lg-10">
-            <%= f.text_field :name, size: 30, class: 'form-control' %>
+          <%= f.label :name, class: 'control-label' %>
+          <div class="">
+            <%= f.text_field :name, class: 'form-control' %>
           </div>
         </div>
         <div class="form-group">
-          <%= f.label :address, class: 'col-lg-2 control-label' %>
-          <div class="col-lg-10">
-            <%= f.text_field :address, size: 30, class: 'form-control' %>
+          <%= f.label :address, class: 'control-label' %>
+          <div class="">
+            <%= f.text_field :address, class: 'form-control' %>
           </div>
         </div>
         <div class="form-group">
-          <%= f.label :city, class: 'col-lg-2 control-label' %>
-          <div class="col-lg-10">
-            <%= f.text_field :city, size: 30, class: 'form-control' %>
+          <%= f.label :city, class: 'control-label' %>
+          <div class="">
+            <%= f.text_field :city, class: 'form-control' %>
           </div>
         </div>
         <div class="form-group">
-          <%= f.label :state, class: 'col-lg-2 control-label' %>
-          <div class="col-lg-10">
-            <%= f.text_field :state, size: 30, class: 'form-control' %>
+          <%= f.label :state, class: 'control-label' %>
+          <div class="">
+            <%= f.text_field :state, class: 'form-control' %>
           </div>
         </div>
         <div class="form-group">
-          <%= f.label :zip_code, class: 'col-lg-2 control-label' %>
-          <div class="col-lg-10">
-            <%= f.text_field :zip_code, size: 30, class: 'form-control' %>
+          <%= f.label :zip_code, class: 'control-label' %>
+          <div class="">
+            <%= f.text_field :zip_code, class: 'form-control' %>
           </div>
         </div>
         <div class="form-group">
-          <%= f.label :phone, class: 'col-lg-2 control-label' %>
-          <div class="col-lg-10">
-            <%= f.text_field :phone, size: 30, class: 'form-control' %>
+          <%= f.label :phone, class: 'control-label' %>
+          <div class="">
+            <%= f.text_field :phone, class: 'form-control' %>
           </div>
         </div>
         <div class="form-group">
-          <%= f.label :main_url, class: 'col-lg-2 control-label' %>
-          <div class="col-lg-10">
-            <%= f.text_field :main_url, size: 30, class: 'form-control' %>
+          <%= f.label :main_url, class: 'control-label' %>
+          <div class="">
+            <%= f.text_field :main_url, class: 'form-control' %>
           </div>
         </div>
         <div class="form-group">
-          <%= f.label :career_url, class: 'col-lg-2 control-label' %>
-          <div class="col-lg-10">
-            <%= f.text_field :career_url, size: 30, class: 'form-control' %>
+          <%= f.label :career_url, class: 'control-label' %>
+          <div class="">
+            <%= f.text_field :career_url, class: 'form-control' %>
           </div>
         </div>
         <div class="form-group">
-          <%= f.label :image, class: 'col-lg-2 control-label' %>
-          <div class="col-lg-10">
+          <%= f.label :image, class: 'control-label' %>
+          <div class="">
             <%= f.file_field :image, class: 'form-control' %>
           </div>
         </div>
         <div class="form-group">
-          <div class="col-lg-10 col-lg-offset-2">
+          <div class="">
             <%- if params[:action] == 'new' %>
               <%= f.submit 'Add New Company', class: 'btn btn-primary' %> or 
               <%= link_to "cancel", companies_path %>

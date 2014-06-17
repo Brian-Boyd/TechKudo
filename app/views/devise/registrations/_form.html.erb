@@ -1,0 +1,67 @@
+<div class="form-container">
+  <div class="well">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= devise_error_messages! %>
+
+      <fieldset>
+        <%- if params[:action] == 'new' %>
+          <legend>Add New User</legend>
+        <%- elsif params[:action] == 'edit' %>
+          <legend>Edit <%= @user.name %></legend>
+        <%- end %>
+        <div class="form-group">
+          <%= f.label :name, class: 'control-label' %>
+          <div class="">
+            <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :email, class: 'control-label' %>
+          <div class="">
+            <%= f.email_field :email, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <% end %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password, class: 'control-label' %> * only to change password
+          <div class="">
+            <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :password_confirmation, class: 'control-label' %> * only to change password
+          <div class="">
+            <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :current_password, class: 'control-label' %>
+          <div class="">
+            <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :image, class: 'control-label' %>
+          <div class="">
+            <%= f.file_field :image, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="">
+            <%- if params[:action] == 'new' %>
+              <%= f.submit 'Add New User', class: 'btn btn-primary' %> or 
+              <%= link_to "cancel", companies_path %>
+            <%- elsif params[:action] == 'edit' %>
+              <%= f.submit 'Edit User', class: 'btn btn-primary' %> or 
+              <%= link_to "cancel", companies_path %>
+            <%- end %>
+          </div>
+        </div>
+      </fieldset>
+    <% end %>
+  </div>
+</div>

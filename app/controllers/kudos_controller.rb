@@ -30,7 +30,7 @@ class KudosController < ApplicationController
         end
       end
     else
-      redirect_to :back, notice: "Please select a company first"
+      redirect_to :back, error_explanation: "Please select a company first"
     end
   end
 

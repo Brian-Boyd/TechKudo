@@ -28,7 +28,7 @@ a {
 
 .sidebar {
   position:absolute;
-  width:33.3333%;
+  width:25.5%;
   height:100%;
   top:40px;left:0;
   overflow:hidden;
@@ -43,7 +43,7 @@ a {
   position:absolute;
   left:25%;
   width:75%;
-  top:0;bottom:0;
+  top:40px;bottom:40px;
   }
 .heading {
   background:#fff;
@@ -109,7 +109,7 @@ a {
 .leaflet-popup-content {
   font:400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
   padding:0;
-  width:200px;
+  width:300px;
   }
   .leaflet-popup-content-wrapper {
     padding:0;

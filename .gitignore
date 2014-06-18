@@ -10,6 +10,6 @@ docs/maps/*
 config/initializers/omniauth.rb
 config/initializers/omniauth.yml
 app/views/companies/index.html.erb.original-map
-app/public/system/*
+public/system/*
 
 .DS_Store

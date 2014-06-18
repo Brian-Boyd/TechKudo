@@ -7,7 +7,8 @@
         <%- if params[:action] == 'new' %>
           <legend>Add New User</legend>
         <%- elsif params[:action] == 'edit' %>
-          <legend>Edit <%= @user.name %></legend>
+          <legend>Edit <%= @user.name %>'s Profile
+            <div class="pull-right"><%= image_tag gravatar_url(current_user, 40) %></div></legend>
         <%- end %>
         <div class="form-group">
           <%= f.label :name, class: 'control-label' %>
@@ -45,19 +46,13 @@
           </div>
         </div>
         <div class="form-group">
-          <%= f.label :image, class: 'control-label' %>
           <div class="">
-            <%= f.file_field :image, class: 'form-control' %>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="">
-            <%- if params[:action] == 'new' %>
+            <%- if ['new', 'create'].include?(params[:action]) %>
               <%= f.submit 'Add New User', class: 'btn btn-primary' %> or 
-              <%= link_to "cancel", companies_path %>
-            <%- elsif params[:action] == 'edit' %>
+              <%= link_to "cancel", root_path %>
+            <%- elsif ['edit', 'update'].include?(params[:action]) %>
               <%= f.submit 'Edit User', class: 'btn btn-primary' %> or 
-              <%= link_to "cancel", companies_path %>
+              <%= link_to "cancel", root_path %>
             <%- end %>
           </div>
         </div>

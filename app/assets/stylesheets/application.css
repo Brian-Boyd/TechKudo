@@ -17,6 +17,11 @@
  *= require_tree .
  *= require_self
  */
+ 
+.btn-primary:hover {
+  background-image: none;
+  border: 1px solid #FFF;
+}
 
  .ui-autocomplete {
   z-index: 999999

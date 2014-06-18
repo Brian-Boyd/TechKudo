@@ -75,10 +75,10 @@
         </div>
         <div class="form-group">
           <div class="">
-            <%- if params[:action] == 'new' %>
+            <%- if ['new', 'create'].include?(params[:action]) %>
               <%= f.submit 'Add New Company', class: 'btn btn-primary' %> or 
               <%= link_to "cancel", companies_path %>
-            <%- elsif params[:action] == 'edit' %>
+            <%- elsif ['edit', 'update'].include?(params[:action]) %>
               <%= f.submit 'Edit Company', class: 'btn btn-primary' %> or 
               <%= link_to "cancel", companies_path %>
             <%- end %>

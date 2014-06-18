@@ -22,39 +22,43 @@
   </div>
 
   <div class="kudo-container">
-    <div class="kudo-icon-wrapper">
-      <img src="http://lorempixel.com/40/40/">
-    </div>
-    <div class="kudo-detail-wrapper">
-    <%= form_for @kudo, html: { class: 'form-horizontal' } do |f| %>
+    <%- if current_user %>
+      <div class="kudo-icon-wrapper">
+        <%= image_tag gravatar_url(current_user, 40) %>
+      </div>
+      <div class="kudo-detail-wrapper">
+        <%= form_for @kudo, html: { class: 'form-horizontal' } do |f| %>
 
-      <%= f.hidden_field :company_id, value: @company.id %>
+          <%= f.hidden_field :company_id, value: @company.id %>
 
-      <div class="form-group">
-        <%= f.label :relationship, class: 'col-lg-3 control-label' %>
-        <div class="col-lg-9">
-          <%= f.select :relationship, options_for_select(Kudo::RELATIONSHIP), { prompt: "Select your relationship" }, { class: 'form-control selectpicker' } %>
-        </div>
+          <div class="form-group">
+            <%= f.label :relationship, class: 'col-lg-3 control-label' %>
+            <div class="col-lg-9">
+              <%= f.select :relationship, options_for_select(Kudo::RELATIONSHIP), { prompt: "Select your relationship" }, { class: 'form-control selectpicker' } %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :image, class: 'col-lg-3 control-label' %>
+            <div class="col-lg-9">
+              <%= f.file_field :image, class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :comment, class: 'col-lg-3 control-label' %>
+            <div class="col-lg-9">
+              <%= f.text_area :comment, rows: "4", cols: "40", class: "form-control", placeholder: "Leave a Kudo for this company." %>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-lg-9 col-lg-offset-3">
+              <%= f.submit 'Give Kudos', class: 'btn btn-primary' %>
+            </div>
+          </div>
+        <% end %>
       </div>
-      <div class="form-group">
-        <%= f.label :image, class: 'col-lg-3 control-label' %>
-        <div class="col-lg-9">
-          <%= f.file_field :image, class: "form-control" %>
-        </div>
-      </div>
-      <div class="form-group">
-        <%= f.label :comment, class: 'col-lg-3 control-label' %>
-        <div class="col-lg-9">
-          <%= f.text_area :comment, rows: "4", cols: "40", class: "form-control", placeholder: "Leave a Kudo for this company." %>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-lg-9 col-lg-offset-3">
-          <%= f.submit 'Give Kudos', class: 'btn btn-primary' %>
-        </div>
-      </div>
-    <% end %>
-    </div>
+    <%- elsif %>
+      <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#login">Sign In to Give Kudos!</button>
+    <%- end %>
   </div>
 
   <div class="kudo-container">
@@ -63,17 +67,19 @@
       <% @company.kudos.each do |kudo| %>
       <li class="kudo">
         <div class="kudo-icon-wrapper">
-          <img src="http://lorempixel.com/40/40/sports/">
+          <%= image_tag gravatar_url(current_user, 40) %>
+          <!-- <img src="http://lorempixel.com/40/40/sports/"> -->
         </div>
         <div class="kudo-detail-wrapper">
           <p><%= kudo.comment %></p>
+          <%= image_tag @kudo.image.url(:thumb) %>
         </div>
       </li>
       <% end %>
 
     </ul>
 
-<%= image_tag @kudo.image.url %>
+
 <%= image_tag @kudo.image.url(:medium) %>
 <%= image_tag @kudo.image.url(:thumb) %>
 
@@ -108,7 +114,7 @@
   <br>
   <h3 class="text-center">Other Nearby Companies</h3>
 
-  <% for company in @company.nearbys(10).limit(3) %>
+  <% for company in @company.nearbys(10).limit(5) %>
     <div class="closeby-company">
      <h3><%= link_to company.name, company %></h3>
      <%= company.address %><br>

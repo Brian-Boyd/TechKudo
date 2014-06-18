@@ -1,32 +1,28 @@
 <div class="second-fourth">
 
   <div class="well col-sm-4 col-sm-offset-1">
-    <h3>CSS</h3>
+    <h3>Known Bugs</h3>
     <ul>
-      <li>On the company index page, allow the company name in left column to be linkable to company show page.</li>
+      <li><span style="color:red;">Error when updating company. Routing Error - No route matches [PATCH] "/companies"</span></li>
+      <li>Images are not found that are uploaded via Paperclip.</li>
       <li>Style all error validations to look the same. (NOTE: I'm not exactly sure where to find this.)</li>
-    </ul>
-    <h3>Logic</h3>
-    <ul>
-      <li>Once logged in, the 'Sign In' will change to user's name and the dropdown includes links to profile and log out. Add an avatar next to the user's name.</li>
-      <li>Add if statements to the left column of the company index page to compress any blank fields.</li>
-      <li>When not signed in, the user clicks ‘Give Kudos’ or 'Add Company' and is presented with a sign in page. After submitting the sign in page, the user should be redirected to the ‘Give Kudos’ page or the 'Add Company' page. (NOTE: Nick was going to research and get back to me. Might not be easy)</li>
-      <li>Submit button hide. Example, got to 'edit profile' and not add password, submit and the validation hides the submit button. When you add your password, the submit button does not reappear.</li>
-      <li>Add logic to not show error page when trying to 'Give Kudos', 'Add Company', etc when a visitor is not logged in.</li>
+      <li>If trying to login with Facebook with the same email address already in the database, duplicate entry error screen appears. How can the facebook user be destroyed from database after logout?</li>
+      <li>When not signed in, the user clicks ‘Give Kudos’ or 'Add Company' and is presented with a sign in page. After submitting the sign in page, the user should be redirected to the ‘Give Kudos’ page or the 'Add Company' page. (NOTE: Not sure how to fix.)</li>
     </ul>
   </div>
 
   <div class="well col-sm-4 col-sm-offset-2">
-    <h3>To Do</h3>
+    <h3>Wish List</h3>
     <ul>
       <li>Style home page and include text content.</li>
+      <li>On the company index page, allow the company name in left column to be linkable to company show page.</li>
       <li>Would like feature for user to crop images on/after upload.</li>
-      <li>Profile page needs user's avatar showing. The same avatar that should be viewable next to the kudos they give.</li>
+      <li>User's Gravatar needs to appear next to the kudo they gave as well as their name.</li>
       <li>If signed in with Facebook, grab their profile image for the kudos they give. (NOTE: might be too difficult)</li>
       <li>Image gallery for each company.</li>
       <li>Rating system.</li>
-      <li>Add search to filter by city, state, zip. -SOLR Gem</li>
-      <li>Add link to the form 'add company’ in the search field.</li>
+      <li><span style="color:red;">Add search to filter by city, state, zip. -SOLR Gem</span></li>
+      <li><span style="color:red;">Add link to the form 'add company’ in the search field.</span></li>
     </ul>
   </div>
 

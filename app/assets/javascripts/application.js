@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.autocomplete
+//= require fancybox
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
@@ -26,3 +27,15 @@ $(function() {
     }
   });
 })
+
+  $(document).ready(function() {
+  $("a.fancybox-button").attr('rel', 'gallery').fancybox({
+    prevEffect    : 'none',
+    nextEffect    : 'none',
+    closeBtn    : false,
+    helpers   : {
+      title : { type : 'inside' },
+      buttons : {}
+    }
+  });
+});

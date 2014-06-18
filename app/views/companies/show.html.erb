@@ -1,10 +1,11 @@
-<p id="notice"><%= notice %></p>
-
 <div class="col-sm-8">
   <div class="company-container">
     <div class="company-icon-wrapper">
-      <!-- <%= image_tag @company.image.url(:medium) %> -->
-      <img src="http://lorempixel.com/250/150/sports/">
+      <% if @company.image_file_name == nil %>
+        <li><img src="http://lorempixel.com/250/150/sports/"></li>
+      <% else %>
+        <%= image_tag @company.image.url(:medium) %>
+      <% end %>
     </div>
     <div class="company-detail-wrapper">
       <h2><%= @company.name %></h2>
@@ -16,8 +17,13 @@
         <%= link_to @company.career_url, @company.career_url, target: "_blank" %>
       <%- end %>
       </p>
-
-      <%= link_to 'Suggest an Edit', edit_company_path(@company) %>
+      <% if current_user %>
+        <li><%= link_to 'Suggest an Edit', edit_company_path(@company) %></li>
+      <% else %>
+        <li>
+          <a href="#" data-toggle="modal" data-target="#login">Suggest an Edit</a>
+        </li>
+      <% end %>
     </div>
   </div>
 
@@ -67,23 +73,27 @@
       <% @company.kudos.each do |kudo| %>
       <li class="kudo">
         <div class="kudo-icon-wrapper">
-          <%= image_tag gravatar_url(current_user, 40) %>
-          <!-- <img src="http://lorempixel.com/40/40/sports/"> -->
+          <%= image_tag gravatar_url(kudo.user, 40) %>
         </div>
         <div class="kudo-detail-wrapper">
           <p><%= kudo.comment %></p>
-          <%= image_tag @kudo.image.url(:thumb) %>
+          <%= image_tag kudo.image.url(:thumb) %>
         </div>
       </li>
       <% end %>
 
     </ul>
 
-
-<%= image_tag @kudo.image.url(:medium) %>
-<%= image_tag @kudo.image.url(:thumb) %>
-
   </div>
+
+  <div class="kudo-container">
+    <% @company.kudos.each do |kudo| %>
+      <%= link_to kudo.image.url, class: 'fancybox-button' do %>
+        <%= image_tag kudo.image.url(:thumb) %>
+      <% end %>
+    <% end %>
+  </div>
+
 </div>
 
 <div class="col-sm-4">

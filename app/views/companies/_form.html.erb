@@ -1,6 +1,6 @@
 <div class="form-container">
   <div class="well">
-    <%= form_for @company, url: companies_path, html: { multipart: true, class: 'form-horizontal' } do |f| %>
+    <%= form_for @company, url: company_path(@company), html: { multipart: true, class: 'form-horizontal' } do |f| %>
       <% if @company.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:</h2>
@@ -19,6 +19,7 @@
         <%- elsif params[:action] == 'edit' %>
           <legend>Edit <%= link_to @company.name, @company %></legend>
         <%- end %>
+        <%= f.hidden_field :company_id, value: @company.id %>
         <div class="form-group">
           <%= f.label :name, class: 'control-label' %>
           <div class="">

@@ -1,1 +1,91 @@
-<%= render 'form' %>
+<div class="form-container">
+  <div class="well">
+    <%= form_for @company, url: company_path(@company), html: { multipart: true, class: 'form-horizontal' } do |f| %>
+      <% if @company.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:</h2>
+
+          <ul>
+          <% @company.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <fieldset>
+        <%- if params[:action] == 'new' %>
+          <legend>Add New Company</legend>
+        <%- elsif params[:action] == 'edit' %>
+          <legend>Edit <%= link_to @company.name, @company %></legend>
+        <%- end %>
+        <%= f.hidden_field :company_id, value: @company.id %>
+        <div class="form-group">
+          <%= f.label :name, class: 'control-label' %>
+          <div class="">
+            <%= f.text_field :name, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :address, class: 'control-label' %>
+          <div class="">
+            <%= f.text_field :address, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :city, class: 'control-label' %>
+          <div class="">
+            <%= f.text_field :city, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :state, class: 'control-label' %>
+          <div class="">
+            <%= f.text_field :state, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :zip_code, class: 'control-label' %>
+          <div class="">
+            <%= f.text_field :zip_code, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :phone, class: 'control-label' %>
+          <div class="">
+            <%= f.text_field :phone, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :main_url, class: 'control-label' %>
+          <div class="">
+            <%= f.text_field :main_url, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :career_url, class: 'control-label' %>
+          <div class="">
+            <%= f.text_field :career_url, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :image, class: 'control-label' %>
+          <div class="">
+            <%= f.file_field :image, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="">
+            <%- if ['new', 'create'].include?(params[:action]) %>
+              <%= f.submit 'Add New Company', class: 'btn btn-primary' %> or 
+              <%= link_to "cancel", companies_path %>
+            <%- elsif ['edit', 'update'].include?(params[:action]) %>
+              <%= f.submit 'Edit Company', class: 'btn btn-primary' %> or 
+              <%= link_to "cancel", companies_path %>
+            <%- end %>
+          </div>
+        </div>
+      </fieldset>
+    <% end %>
+  </div>
+</div>

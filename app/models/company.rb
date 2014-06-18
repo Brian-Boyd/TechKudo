@@ -3,12 +3,12 @@ class Company < ActiveRecord::Base
   has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/assets/:style/missing.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
-  validates :name, presence: {message: 'name cannot be blank, form not submitted'}
-  validates :address, presence: {message: 'name cannot be blank, form not submitted'}
-  validates :city, presence: {message: 'name cannot be blank, form not submitted'}
-  validates :state, presence: {message: 'name cannot be blank, form not submitted'}
-  validates :zip_code, presence: {message: 'name cannot be blank, form not submitted'}
-  validates :main_url, presence: {message: 'name cannot be blank, form not submitted'}
+  validates :name, presence: {message: 'cannot be blank, form not submitted'}
+  validates :address, presence: {message: 'cannot be blank, form not submitted'}
+  validates :city, presence: {message: 'cannot be blank, form not submitted'}
+  validates :state, presence: {message: 'cannot be blank, form not submitted'}
+  validates :zip_code, presence: {message: 'cannot be blank, form not submitted'}
+  validates :main_url, presence: {message: 'cannot be blank, form not submitted'}
 
   def full_address
     [address, city, state, zip_code].compact.join(', ')

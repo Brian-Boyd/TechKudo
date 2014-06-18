@@ -10,6 +10,7 @@ gem 'omniauth-facebook'
 gem 'geocoder'
 gem 'paperclip'
 gem 'jquery-ui-rails'
+gem 'fancybox2-rails', '~> 0.2.8'
 
 # group :development do
 #   gem 'better_errors'

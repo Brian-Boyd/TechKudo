@@ -13,3 +13,5 @@ app/views/companies/index.html.erb.original-map
 public/system/*
 
 .DS_Store
+# Ignore application configuration
+/config/application.yml

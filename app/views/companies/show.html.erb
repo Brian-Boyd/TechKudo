@@ -76,22 +76,17 @@
           <%= image_tag gravatar_url(kudo.user, 40) %>
         </div>
         <div class="kudo-detail-wrapper">
-          <p><%= kudo.comment %></p>
-          <%= image_tag kudo.image.url(:thumb) %>
+          <p><%= link_to kudo.image.url, class: 'fancybox-button pull-right' do %>
+        <%= image_tag kudo.image.url(:thumb) %>
+      <% end %>
+          <%= kudo.comment %><br>
+          Kudo give by: <strong><%= kudo.user.name %></strong></p>
         </div>
       </li>
       <% end %>
 
     </ul>
 
-  </div>
-
-  <div class="kudo-container">
-    <% @company.kudos.each do |kudo| %>
-      <%= link_to kudo.image.url, class: 'fancybox-button' do %>
-        <%= image_tag kudo.image.url(:thumb) %>
-      <% end %>
-    <% end %>
   </div>
 
 </div>

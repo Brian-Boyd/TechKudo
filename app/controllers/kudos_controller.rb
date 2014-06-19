@@ -16,7 +16,6 @@ class KudosController < ApplicationController
   end
 
   def create
-    # @kudo = Kudo.create( kudo_params ) # paperclip instructions, but duplicted kudo
     @company = Company.where(id: params[:kudo][:company_id]).first
     if @company
       @kudo = @company.kudos.new kudo_params.merge({user_id: current_user.id})

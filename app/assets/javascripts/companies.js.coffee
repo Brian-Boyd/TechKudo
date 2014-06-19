@@ -28,7 +28,7 @@ load_on_page = ->
         prop = locale.feature.properties
         
         # Each marker on the map.
-        popup = "<h3>" + "<a href='http://localhost:3000/companies/" + prop.id + "'>" + prop.name + "</a>" + "</h3><div>" + prop.address
+        popup = "<h3>" + "<a href='/companies/" + prop.id + "'>" + prop.name + "</a>" + "</h3><div>" + prop.address
         listing = listings.appendChild(document.createElement("div"))
         listing.className = "item"
         link = listing.appendChild(document.createElement("a"))

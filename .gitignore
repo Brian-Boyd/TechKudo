@@ -9,7 +9,6 @@ docs/private.md
 docs/maps/*
 config/initializers/omniauth.yml
 app/views/companies/index.html.erb.original-map
-public/system/*
 
 .DS_Store
 # Ignore application configuration

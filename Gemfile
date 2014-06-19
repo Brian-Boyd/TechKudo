@@ -13,6 +13,8 @@ gem 'geocoder'
 gem 'paperclip'
 gem 'jquery-ui-rails'
 gem 'fancybox2-rails', '~> 0.2.8'
+gem 'figaro'
+gem "paperclip-dropbox", ">= 1.1.7"
 
 # group :development do
 #   gem 'better_errors'
@@ -28,4 +30,3 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
-gem 'figaro'

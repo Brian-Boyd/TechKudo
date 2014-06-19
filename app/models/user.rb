@@ -8,7 +8,9 @@ class User < ActiveRecord::Base
   has_many :companies, through: :company_user_join_table
   has_many :rating_user_join_table
   has_many :ratings, through: :rating_user_join_table
-  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/assets/:style/missing.png"
+  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/assets/:style/missing.png",
+    :storage => :dropbox,
+    :dropbox_credentials => Rails.root.join("config/dropbox.yml")
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   def self.from_facebook_omniauth(auth)

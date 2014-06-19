@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140606132404) do
+ActiveRecord::Schema.define(version: 20140606123926) do
 
   create_table "companies", force: true do |t|
     t.string   "name"
@@ -28,13 +28,6 @@ ActiveRecord::Schema.define(version: 20140606132404) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "kudo_user_join_tables", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "company_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

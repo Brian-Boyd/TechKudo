@@ -21,7 +21,7 @@
 $(function() {
   $("#header-search").autocomplete({
     source: '/companies/autocomplete.json',
-    minLength: 2,
+    minLength: 1,
     select: function( event, ui ) {
       window.location = "/companies/" + ui.item.id
     }

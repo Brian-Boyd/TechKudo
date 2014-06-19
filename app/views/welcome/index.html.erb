@@ -1,6 +1,49 @@
-<div class="second-fourth">
+<%= image_tag '01.png', class: 'center-block img-responsive' %>
 
-  <div class="well col-sm-4 col-sm-offset-1">
-  </div>
+<div class="well max-width-container">
+
+  <h2><strong>Overview:</strong></h2>
+    <p>TechKudo is a directory of technology companies, where they are located, where to find job openings and kudos from people that know the company. A job seekers starting point.</p>
+  <h4><strong>TechKudo</strong> [tek koo doh]</h4>
+    <p>an admiring personal remark from a person given to a technology company</p>
+
+  <hr>
+
+  <h2><strong>How it Works:</strong></h2>
+
+  <h4><strong>To find great companies:</strong></h4>
+    <ul>
+      <li>If you know the company name, just start typing in the search field in the navbar and click the company name when it appears.</li>
+      <li>Browse companies by clicking Companies in the navbar, then click "Browse Companies" and a map will appear with markers for each company that is in our database.</li>
+      <li>Click on the company you are interested in to load their profile and read the kudos they have received.</li>
+      <li>If you do not see the company you are searching for, just add it.</li>
+      <li>When on a company show page, it will list 5 other companies that are closeby.</li>
+    </ul>
+
+  <h4><strong>To share great stories:</strong></h4>
+    <ul>
+      <li>Join the community and give kudos to great companies to work for and upload your favorite snapshot.</li>
+      <li>When on a company's show page, if there are pictures uploaded with kudos, click the image to enlarge and to play a slideshow if there are more than one picture that has been upload to the company.</li>
+    </ul>
+
+  <hr>
+
+  <h3><strong>Known Issues</strong></h3>
+    <ul>
+      <li>The app is limited in scope mainly because when browsing companies, it will load all companies stored in database.</li>
+      <li>If trying to login with Facebook with the same email address that a current user in the database already is using, duplicate entry error screen appears. Need logic to tell user that their email address is already in the database.</li>
+      <li>When not signed in, the user clicks ‘Give Kudos’ 'Add Company', 'Edit Company' and is presented with a sign in page. After submitting the sign in page, the user should be redirected to the ‘Give Kudos’ page the 'Add Company' or the 'Edit Company' page.</li>
+      <li>When adding a new company, a valid address is required or you will get an undefined method error because of the geocoding.</li>
+      <li>The page needs to be reloaded if the search in the navbar does not work.</li>
+    </ul>
+
+  <hr>
+
+  <h3><strong>Planned Features</strong></h3>
+    <ul>
+      <li>Allow a user to crop images on upload.* Image gallery for each company.</li>
+      <li>Rating system and/or like button.</li>
+      <li>Add search to filter by city, state, zip.</li>
+    </ul>
 
 </div>

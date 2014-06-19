@@ -2,7 +2,7 @@
   <div class="company-container">
     <div class="company-icon-wrapper">
       <% if @company.image_file_name == nil %>
-        <li><img src="http://lorempixel.com/250/150/sports/"></li>
+        <img src="http://lorempixel.com/250/150/sports/">
       <% else %>
         <%= image_tag @company.image.url(:medium) %>
       <% end %>
@@ -18,7 +18,7 @@
       <%- end %>
       </p>
       <% if current_user %>
-        <li><%= link_to 'Suggest an Edit', edit_company_path(@company) %></li>
+        <%= link_to 'Suggest an Edit', edit_company_path(@company) %>
       <% else %>
         <li>
           <a href="#" data-toggle="modal" data-target="#login">Suggest an Edit</a>

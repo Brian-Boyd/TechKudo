@@ -10,6 +10,39 @@ TechKudo is a directory of technology companies, where they are located, where t
 
 #### TechKudo [tek koo doh]
 * an admiring personal remark from a person given to a technology company
+
+## Installation
+
+TechKudo was built with Rails 4. You can clone it to your localhost:
+
+```
+git clone https://github.com/Brian-Boyd/TechKudo.git
+```
+
+Run the bundle command to install it.
+
+```
+bundle install
+```
+
+Build the database. The seed file includes sample users, technology companies in the Charleston, SC area and comments for 2 fictional companies.
+
+```
+rake db:create db:migrate db:seed
+```
+
+Start the server
+
+```
+rails server
+```
+
+Open your browser and enter the following address.
+
+```
+http://localhost:3000
+```
+-----------------------------
  
 ## How it Works:
 
@@ -35,38 +68,3 @@ TechKudo is a directory of technology companies, where they are located, where t
 * Allow a user to crop images on upload.* Image gallery for each company.
 * Rating system and/or like button.
 * Add search to filter by city, state, zip.
-
-----
-
-## Installation
-
-TechKudo was built with Rails 4. You can clone it to your localhost:
-
-```
-git clone https://github.com/Brian-Boyd/TechKudo.git
-```
-
-Run the bundle command to install it.
-
-```
-bundle install
-```
-
-Then build the database. The seed file includes sample users, technology companies in the Charleston, SC area and comments for 2 fictional companies.
-
-```
-rake db:create db:migrate db:seed
-```
-
-Start the server
-
-```
-rails server
-```
-
-Open your browser and enter the following address.
-
-```
-http://localhost:3000
-```
-

@@ -13,10 +13,10 @@ development:
 #   timeout: 5000
 #   database: port_TechKudo_test
 
-production:
-adapter: postgresql
-encoding: unicode
-database: techkudo_production
-pool: 5
-username: ironyard
-password: ironyard
+# production:
+# adapter: postgresql
+# encoding: unicode
+# database: techkudo_production
+# pool: 5
+# username: ironyard
+# password: ironyard

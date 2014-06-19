@@ -14,7 +14,7 @@ gem 'paperclip'
 gem 'jquery-ui-rails'
 gem 'fancybox2-rails', '~> 0.2.8'
 gem 'figaro'
-gem "paperclip-dropbox", ">= 1.1.7"
+gem 'paperclip-dropbox', '>= 1.1.7'
 
 # group :development do
 #   gem 'better_errors'

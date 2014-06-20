@@ -67,34 +67,35 @@
     <%- end %>
   </div>
 
-  <!-- NEED TO HIDE DIV IF NO KUDO -->
+  <!-- START HIDE DIV IF NO KUDO -->
 
-  <div class="kudo-container">
-    <ul class="kudo-list">
+  <% if @company.kudos.length > 0 %>
+    <div class="kudo-container">
+      <ul class="kudo-list">
 
-      <% @company.kudos.each do |kudo| %>
-      <li class="kudo">
-        <div class="kudo-icon-wrapper">
-          <%= image_tag gravatar_url(kudo.user, 40) %>
-        </div>
-        <div class="kudo-detail-wrapper">
-          <% if kudo.image_file_name == nil %>
-            <p>
-          <% else %>
-            <p><%= link_to kudo.image.url, class: 'fancybox-button pull-right' do %>
-            <%= image_tag kudo.image.url(:thumb) %>
-          <% end %>
-      <% end %>
-          <%= kudo.comment %><br>
-          Kudo given by: <strong><%= kudo.user.name %></strong></p>
-        </div>
-      </li>
-      <% end %>
+        <% @company.kudos.each do |kudo| %>
+        <li class="kudo">
+          <div class="kudo-icon-wrapper">
+            <%= image_tag gravatar_url(kudo.user, 40) %>
+          </div>
+          <div class="kudo-detail-wrapper">
+            <% if kudo.image_file_name == nil %>
+              <p>
+            <% else %>
+              <p><%= link_to kudo.image.url, class: 'fancybox-button pull-right' do %>
+              <%= image_tag kudo.image.url(:thumb) %>
+            <% end %>
+        <% end %>
+            <%= kudo.comment %><br>
+            Kudo given by: <strong><%= kudo.user.name %></strong></p>
+          </div>
+        </li>
+        <% end %>
 
-    </ul>
-  </div>
-
-  <!-- NEED TO HIDE DIV IF NO KUDO -->
+      </ul>
+    </div>
+  <% end %>
+  <!-- END HIDE DIV IF NO KUDO -->
 
 </div>
 

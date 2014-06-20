@@ -1,9 +1,5 @@
 # Final Project: TechKudo
 
-Live Demo: <http://techkudo.herokuapp.com/>
-
-Code: <http://GitHub.com/Brian-Boyd/TechKudo>
-
 ## Overview:
 
 TechKudo is a directory of technology companies, where they are located, where to find job openings and kudos from people that know the company. A job seekers starting point.

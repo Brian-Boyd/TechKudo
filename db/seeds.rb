@@ -192,22 +192,9 @@ Company.create!(
   zip_code:   "29403",
   phone:      "843.513.1531",
   main_url:   "http://www.eddsa.com/",
-  career_url: "",
+  career_url: "http://www.radiateit.com/careers/",
   latitude:   "32.810109",
   longitude:  "-79.9480619"
-  )
-
-Company.create!(
-  name:       "Wink Creative Studio",
-  address:    "185-A St. Philip St",
-  city:       "Charleston",
-  state:      "SC",
-  zip_code:   "29403",
-  phone:      "843.364.7503",
-  main_url:   "http://winkcreativestudio.com/",
-  career_url: "",
-  latitude:   "32.7913859",
-  longitude:  "-79.9419557"
   )
 
 Company.create!(
@@ -244,7 +231,7 @@ Company.create!(
   zip_code:   "29403",
   phone:      "703.851.2877",
   main_url:   "http://crunchydatasolutions.com/",
-  career_url: "",
+  career_url: "http://crunchydatasolutions.com/contact/",
   latitude:   "32.789254",
   longitude:  "-79.930245"
   )
@@ -296,7 +283,7 @@ Company.create!(
   zip_code:   "29403",
   phone:      "843-608-5066",
   main_url:   "http://www.themodernconnection.com/",
-  career_url: "",
+  career_url: "http://themodernconnection.com/our-company/career-opportunities/",
   latitude:   "32.7902634",
   longitude:  "-79.9294217"
   )
@@ -348,7 +335,7 @@ Company.create!(
   zip_code:   "29403",
   phone:      "202.386.6001",
   main_url:   "http://www.phishlabs.com/",
-  career_url: "",
+  career_url: "http://www.phishlabs.com/about-us/careers/",
   latitude:   "32.7886278",
   longitude:  "-79.930288"
   )
@@ -374,7 +361,7 @@ Company.create!(
   zip_code:   "29403",
   phone:      "843.723.1665",
   main_url:   "http://fuzzco.com/",
-  career_url: "",
+  career_url: "http://fuzzco.com/jobs/",
   latitude:   "32.791074",
   longitude:  "-79.944901"
   )
@@ -387,7 +374,7 @@ Company.create!(
   zip_code:   "29403",
   phone:      "843.216.2700",
   main_url:   "http://www.info-arch.com/",
-  career_url: "",
+  career_url: "http://www.info-arch.com/?page_id=15",
   latitude:   "32.791188",
   longitude:  "-79.945785"
   )
@@ -400,7 +387,7 @@ Company.create!(
   zip_code:   "29405",
   phone:      "855-462-8528",
   main_url:   "http://www.atlatlsoftware.com/",
-  career_url: "",
+  career_url: "http://www.atlatlsoftware.com/opportunities/",
   latitude:   "32.7855203",
   longitude:  "-79.9359858"
   )
@@ -426,7 +413,7 @@ Company.create!(
   zip_code:   "29407",
   phone:      "843.577.3192",
   main_url:   "http://www.roktech.net/",
-  career_url: "",
+  career_url: "http://www.roktech.net/careers.html",
   latitude:   "32.7932939",
   longitude:  "-79.9981924"
   )
@@ -439,7 +426,7 @@ Company.create!(
   zip_code:   "29407",
   phone:      "843-852-9240",
   main_url:   "http://www.implementingtech.com/",
-  career_url: "",
+  career_url: "http://www.implementingtech.com/company/careers/",
   latitude:   "32.784429",
   longitude:  "-80.0053609"
   )
@@ -491,7 +478,7 @@ Company.create!(
   zip_code:   "29412",
   phone:      "843.724.3440",
   main_url:   "http://stasmayer.com/",
-  career_url: "",
+  career_url: "http://stasmayer.com/about-itfirm/index.php#careers",
   latitude:   "32.733429",
   longitude:  "-79.968473"
   )
@@ -530,7 +517,7 @@ Company.create!(
   zip_code:   "29492",
   phone:      "800.814.7705",
   main_url:   "http://www.cssus.com/",
-  career_url: "",
+  career_url: "http://www.cssus.com/open-positions",
   latitude:   "32.856416",
   longitude:  "-79.9045469"
   )
@@ -699,7 +686,7 @@ Company.create!(
   zip_code:   "29401",
   phone:      "843.853.6999",
   main_url:   "http://www.carepoint.com/",
-  career_url: "",
+  career_url: "http://carepoint.com/careers/",
   latitude:   "32.780485",
   longitude:  "-79.927668"
   )
@@ -751,7 +738,7 @@ Company.create!(
   zip_code:   "29418",
   phone:      "843-266-2330",
   main_url:   "http://www.codelynx.com/",
-  career_url: "",
+  career_url: "http://www.codelynx.com/career-opportunities-charleston-sc/",
   latitude:   "32.860168",
   longitude:  "-80.025211"
   )
@@ -907,7 +894,7 @@ Company.create!(
   zip_code:   "29464",
   phone:      "843.958.8900",
   main_url:   "http://www.modus21.com/",
-  career_url: "",
+  career_url: "http://www.modus21.com/join.asp",
   latitude:   "32.8397975",
   longitude:  "-79.865579"
   )
@@ -933,7 +920,7 @@ Company.create!(
   zip_code:   "29464",
   phone:      "843.628.4168",
   main_url:   "http://www.verge-solutions.com/",
-  career_url: "",
+  career_url: "http://www.indeed.com/cmp/Verge-Solutions",
   latitude:   "32.810637",
   longitude:  "-79.874761"
   )

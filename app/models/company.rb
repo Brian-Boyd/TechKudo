@@ -21,8 +21,9 @@ class Company < ActiveRecord::Base
     [address, city, state, zip_code].compact.join(', ')
   end
 
-  geocoded_by :full_address
-  after_validation :geocode, if: :address_changed?
+  # UNCOMMENT LINES 25-26 FOR GEOCODE TO WORK. DISBLED TO BE ABLE TO WORK ON HEROKU
+  # geocoded_by :full_address
+  # after_validation :geocode, if: :address_changed?
 
   # Bulk Geocoding
   # https://github.com/alexreisner/geocoder#bulk-geocoding

@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 group :development do
   gem 'mysql2'
   gem 'spring'
-  gem 'geocoder' # issues with this on Heroku
+  # gem 'geocoder' # issues with this on Heroku
 #   gem 'better_errors'
 #   gem 'binding_of_caller'
 end
@@ -12,6 +12,7 @@ group :production do
   gem 'rails_12factor'
 end
 
+gem 'geocoder'
 gem 'quiet_assets'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'bootstrap_form'

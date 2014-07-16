@@ -1,25 +1,28 @@
 source 'https://rubygems.org'
 
-gem 'mysql2', group: :development
-gem 'pg', group: :production
-gem 'rails_12factor', group: :production
+group :development do
+  gem 'mysql2'
+  gem 'spring'
+  gem 'geocoder' # issues with this on Heroku
+#   gem 'better_errors'
+#   gem 'binding_of_caller'
+end
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
 gem 'quiet_assets'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'bootstrap_form'
 gem 'devise'
 gem "omniauth"
 gem 'omniauth-facebook'
-gem 'geocoder'
 gem 'paperclip'
 gem 'jquery-ui-rails'
 gem 'fancybox2-rails', '~> 0.2.8'
 gem 'figaro'
 gem 'paperclip-dropbox', '>= 1.1.7'
-
-# group :development do
-#   gem 'better_errors'
-#   gem 'binding_of_caller'
-# end
 
 gem 'rails', '4.1.0'
 gem 'sass-rails', '~> 4.0.3'
@@ -29,4 +32,3 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
-gem 'spring',        group: :development

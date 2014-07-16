@@ -92,7 +92,7 @@ Company.create!(
   latitude:   "32.7907",
   longitude:  "-79.9611"
   )
-
+puts "Seed data goes here."
 Company.create!(
   name:       "Intellectual Alchemy",
   address:    "360 Concord St, Suite 300",
@@ -105,7 +105,7 @@ Company.create!(
   latitude:   "32.7912258",
   longitude:  "-79.9265643"
   )
-
+puts "Seed data goes here."
 Company.create!(
   name:       "Visiture, LLC",
   address:    "444 King St",
@@ -118,7 +118,7 @@ Company.create!(
   latitude:   "32.788913",
   longitude:  "-79.937971"
   )
-
+puts "Seed data goes here."
 Company.create!(
   name:       "PeopleMatter",
   address:    "466 King St",
@@ -131,7 +131,7 @@ Company.create!(
   latitude:   "32.789739",
   longitude:  "-79.938646"
   )
-
+puts "Seed data goes here."
 Company.create!(
   name:       "Studio Nudge",
   address:    "49 Archdale St, Suite 2B",
@@ -144,7 +144,7 @@ Company.create!(
   latitude:   "32.780659",
   longitude:  "-79.935053"
   )
-
+puts "Seed data goes here."
 Company.create!(
   name:       "IdeaTeam, LLC",
   address:    "55D Society St",
@@ -157,7 +157,7 @@ Company.create!(
   latitude:   "32.78417",
   longitude:  "-79.931152"
   )
-
+puts "Seed data goes here."
 Company.create!(
   name:       "Advantage Media Group",
   address:    "65 Gadsden St",
@@ -170,7 +170,7 @@ Company.create!(
   latitude:   "32.781645",
   longitude:  "-79.946543"
   )
-
+puts "Seed data goes here."
 Company.create!(
   name:       "Blue Ion",
   address:    "301B King St",
@@ -183,7 +183,7 @@ Company.create!(
   latitude:   "32.783301",
   longitude:  "-79.935051"
   )
-
+puts "Seed data goes here."
 Company.create!(
   name:       "Radiate Technologies",
   address:    "1085 Morrison Dr",
@@ -196,7 +196,7 @@ Company.create!(
   latitude:   "32.810109",
   longitude:  "-79.9480619"
   )
-
+puts "Seed data goes here."
 Company.create!(
   name:       "Alloneword Design",
   address:    "185-B St. Philip St",
@@ -209,7 +209,7 @@ Company.create!(
   latitude:   "32.7913859",
   longitude:  "-79.9419557"
   )
-
+puts "Seed data goes here."
 Company.create!(
   name:       "AudiaHealth",
   address:    "26 Bee St, Suite A",
@@ -222,7 +222,7 @@ Company.create!(
   latitude:   "32.787162",
   longitude:  "-79.948773"
   )
-
+puts "Seed data goes here."
 Company.create!(
   name:       "Crunchy Data Solutions, Inc.",
   address:    "475-A East Bay St",
@@ -235,7 +235,7 @@ Company.create!(
   latitude:   "32.789254",
   longitude:  "-79.930245"
   )
-
+puts "Seed data goes here."
 Company.create!(
   name:       "Creative Chatter",
   address:    "475-A East Bay St",
@@ -248,7 +248,7 @@ Company.create!(
   latitude:   "32.789254",
   longitude:  "-79.930245"
   )
-
+puts "Seed data goes here."
 Company.create!(
   name:       "Blue Acorn",
   address:    "145 Williman St",
@@ -261,7 +261,7 @@ Company.create!(
   latitude:   "",
   longitude:  ""
   )
-
+puts "Seed data goes here."
 Company.create!(
   name:       "BoomTown",
   address:    "635 Rutledge Ave, Suite 105",
@@ -274,7 +274,7 @@ Company.create!(
   latitude:   "32.7988137",
   longitude:  "-79.9513241"
   )
-
+puts "Seed data goes here."
 Company.create!(
   name:       "The Modern Connection",
   address:    "67 Washington St",
@@ -287,7 +287,7 @@ Company.create!(
   latitude:   "32.7902634",
   longitude:  "-79.9294217"
   )
-
+puts "Seed data goes here."
 Company.create!(
   name:       "BlueKey, Inc.",
   address:    "7 Radcliffe St, Suite 302",
@@ -300,7 +300,7 @@ Company.create!(
   latitude:   "32.7888336",
   longitude:  "-79.9388335"
   )
-
+puts "Seed data goes here."
 Company.create!(
   name:       "sineLabs",
   address:    "78 Alexander St",
